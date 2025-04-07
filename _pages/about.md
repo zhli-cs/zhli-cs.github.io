@@ -16,8 +16,6 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 [2024.02]  Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" has been accepted by _Neural Networks_. 
 
-# Selected Publications
-
 # Academic Services
 
 **Journal Reviewer:**
