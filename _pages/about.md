@@ -13,6 +13,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 # News
 [2025.01]  Our paper "Visual Semantic Contextualization Network for Multi-Query Image Retrieval" has been accepted by _IEEE Transactions on Multimedia_. 
+
 [2024.02]  Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" has been accepted by _Neural Networks_. 
 
 # Selected Publications
