@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 # About Me
-Hi! I'm Zhihao, a first-year Ph.D. student in Computer Science at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). My research interests include Transfer learning, Trustworthy AI, and Computer Vision. 
+Hi! I'm Zhihao, a first-year Ph.D. student in Computer Science at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). My research interests include Unlearnable Examples, Data Privacy, and Multi-modal Learning. 
 
 Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://www.tju.edu.cn/english/index.htm) in 2024, where I focused my research on Cross-Modal Retrieval and Multi-Modal Learning under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
 
@@ -18,6 +18,6 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 # Academic Services
 
-**Journal Reviewer:**
+**Journal Reviewer**
 - IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
 - Knowledge-Based Systems (KBS) 
