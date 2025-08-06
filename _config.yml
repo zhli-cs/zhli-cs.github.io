@@ -12,7 +12,7 @@ title                    : "Zhihao Li/Personal Homepage"
 title_separator          : "-"
 name                     : &name "Zhihao Li"
 description              : &description "personal description"
-url                      : https://zhli-cs.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://zhli-cs.github.io00 # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "zhli-cs/zhli-cs.github.io"
 
