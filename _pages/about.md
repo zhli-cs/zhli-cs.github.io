@@ -18,6 +18,10 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 # Academic Services
 
+**Conference Reviewer**
+- NeurIPS 2025
+- AAAI 2026
+
 **Journal Reviewer**
 - IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)
 - Knowledge-Based Systems (KBS) 
