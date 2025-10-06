@@ -9,7 +9,7 @@ redirect_from:
 # About Me
 Hi! I'm Zhihao, a first-year Ph.D. student at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). 
 
-Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://www.tju.edu.cn/english/index.htm) in 2024, where I focused my research on Cross-Modal Retrieval under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
+Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://en.tju.edu.cn/) in 2024, where I focused my research on Cross-Modal Retrieval under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
 
 # News
 [2025.01]  Our paper "Visual Semantic Contextualization Network for Multi-Query Image Retrieval" has been accepted by _IEEE Transactions on Multimedia_. 
