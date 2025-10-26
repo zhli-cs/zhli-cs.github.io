@@ -6,7 +6,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
+<h2></h2>
 Hi! I'm Zhihao, a first-year Ph.D. student at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). 
 
 Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://en.tju.edu.cn/) in 2024, where I focused my research on Cross-Modal Retrieval under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
@@ -37,7 +37,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 </div>
 
-# Selected Publications
+<h2>Selected Publications</h2>
 (Note: * indicates equal contribution.)
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
