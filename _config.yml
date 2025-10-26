@@ -30,9 +30,9 @@ author:
   uri              : # URL
   # email            : "zli3446@uwo.ca" 
   links:
-    - label: "zli3446@uwo.ca"   # <-- 1. 在这里显示你的邮箱地址
-      icon: "fas fa-fw fa-envelope"   # <-- 2. 使用邮件图标
-      url: "mailto:zli3446@uwo.ca" # <-- 3. 添加 mailto: 链接
+    - label: "zli3446@uwo.ca"
+      icon: "fas fa-fw fa-at"  # <-- CHANGE THIS from fa-envelope to fa-at
+      url: "mailto:zli3446@uwo.ca"
 
   # Academic websites
   arxiv            : # 
