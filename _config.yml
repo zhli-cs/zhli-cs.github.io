@@ -21,12 +21,12 @@ repository               : ""
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : ""
   name             : "Zhihao Li"
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. student at Western University"
+  bio              : "Ph.D. student in Computer Science at Western University"
   location         : "London, Ontario, Canada"
-  employer         : 
+  employer         : "Western University"
   uri              : # URL
   email            : "zli3446@uwo.ca" 
 

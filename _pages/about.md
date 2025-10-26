@@ -1,13 +1,11 @@
 ---
 permalink: /
-title: 
+title: "About me" 
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-
-# About Me
 
 Hi! I'm Zhihao, a first-year Ph.D. student at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). 
 
@@ -23,22 +21,24 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 (Note: * indicates equal contribution.)
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
-    <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 200px; margin-right: 20px;">
+    <img src="../images/paper_VSCN.png" alt="Paper Image" style="width: 150px; margin-right: 20px;">
     <div>
-        <strong>Hierarchical matching and reasoning for multi-query image retrieval</strong><br>
-        Zhong Ji, <strong>Zhihao Li</strong>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li<br>
-        <em>Neural Networks 2024</em><br>
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242">Paper</a> | <a href="https://github.com/zhli-cs/HMRN">Code</a>
+        <strong>Visual Semantic Contextualization Network for Multi-Query Image Retrieval</strong><br>
+        Zhong Ji*, <strong>Zhihao Li*</strong>, Yan Zhang, Yanwei Pang, Xuelong Li<br>
+        <em>IEEE Transactions on Multimedia, 2025</em><br>
+        <a href="https://ieeexplore.ieee.org/abstract/document/11086420">Paper</a> | <a href="https://github.com/zhli-cs/VSCN">Code</a>
     </div>
 </div>
 
 <div style="display: flex; align-items: flex-start;">
-    <img src="../images/paper_VSCN.png" alt="Paper Image" style="width: 200px; margin-right: 20px;">
+    <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 150px; margin-right: 20px;">
     <div>
-        <strong>Visual Semantic Contextualization Network for Multi-Query Image Retrieval</strong><br>
-        Zhong Ji*, <strong>Zhihao Li*</strong>, Yan Zhang, Yanwei Pang, Xuelong Li<br>
-        <em>IEEE Transactions on Multimedia</em><br>
-        <a href="https://ieeexplore.ieee.org/abstract/document/11086420">Paper</a> | <a href="https://github.com/zhli-cs/VSCN">Code</a>
+        <strong>Hierarchical matching and reasoning for multi-query image retrieval</strong><br>
+        Zhong Ji, <strong>Zhihao Li</strong>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li<br>
+        <em>Neural Networks, 2024</em><br>
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242">Paper</a> | <a href="https://github.com/zhli-cs/HMRN">Code</a>
     </div>
 </div>
+
+
 
