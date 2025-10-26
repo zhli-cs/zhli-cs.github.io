@@ -1,23 +1,4 @@
 ---
-title: "About Me"
-layout: single
-publications:
-  - title: "Visual Semantic Contextualization Network for Multi-Query Image Retrieval"
-    authors: "Zhong Ji*, Zhihao Li*, Yan Zhang, Yanwei Pang, Xuelong Li"
-    journal: "IEEE Transactions on Multimedia, 2025"
-    img: "../images/paper_VSCN.png"
-    paper_url: "https://ieeexplore.ieee.org/abstract/document/11086420"
-    code_url: "https://github.com/zhli-cs/VSCN"
-
-  - title: "Hierarchical matching and reasoning for multi-query image retrieval"
-    authors: "Zhong Ji, Zhihao Li, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li"
-    journal: "Neural Networks, 2024"
-    img: "../images/paper_HMRN.png"
-    paper_url: "https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242"
-    code_url: "https://github.com/zhli-cs/HMRN"
----
-
----
 permalink: /
 title: "About Me" 
 # sidebar:
@@ -61,7 +42,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 </div>
 
-<!-- <h2>Selected Publications</h2>
+<h2>Selected Publications</h2>
 (Note: * indicates equal contribution.)
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
@@ -82,22 +63,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
         <em>Neural Networks, 2024</em><br>
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242">Paper</a> | <a href="https://github.com/zhli-cs/HMRN">Code</a>
     </div>
-</div> -->
-
-<h2>Selected Publications</h2>
-(Note: * indicates equal contribution.)
-
-{% for pub in page.publications %}
-<div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
-    <img src="{{ pub.img }}" alt="Paper Image" style="width: 150px; margin-right: 20px;">
-    <div>
-        <strong>{{ pub.title }}</strong><br>
-        {{ pub.authors }}<br>
-        <em>{{ pub.journal }}</em><br>
-        <a href="{{ pub.paper_url }}" target="_blank">Paper</a> | <a href="{{ pub.code_url }}" target="_blank">Code</a>
-    </div>
 </div>
-{% endfor %}
 
 ## Live Visitor Map
 
