@@ -3,7 +3,7 @@ permalink: /
 title: "About Me" 
 sidebar:
   - title: "Live Visitor Map"
-    text: '<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>'
+    content: '<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>'
 redirect_from: 
   - /about/
   - /about.html
