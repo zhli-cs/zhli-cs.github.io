@@ -29,10 +29,6 @@ author:
   employer         : "Western University"
   uri              : # URL
   email            : "zli3446@uwo.ca" 
-  # links:
-  #   - label: "zli3446@uwo.ca"
-  #     icon: "fas fa-fw fa-at"  # <-- CHANGE THIS from fa-envelope to fa-at
-  #     url: "mailto:zli3446@uwo.ca"
 
   # Academic websites
   arxiv            : # 
@@ -55,6 +51,10 @@ author:
   # Social media
   linkedin         : # "https://www.linkedin.com/in/zhihao-l-93b7102b8"
   zhihu            : 
+
+sidebar:
+  title: "Live Visitor Map"
+  html: '<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>'
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:

@@ -22,7 +22,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
   <div class="news-item">
     <div class="news-date">Jan, 2025</div>
     <div class="news-description">
-      Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE Transactions on Multimedia</em>.
+      Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE TMM</em>.
     </div>
   </div>
 
