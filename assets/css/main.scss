@@ -42,62 +42,34 @@
 
 /* --- News Section Layout (Enhanced Version) --- */
 
+/* --- News Section Layout --- */
 .news-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* space between news items */
-  margin-top: 1.5em; /* space below the "News" heading */
+  gap: 1rem; /* 设置每个新闻条目之间的垂直间距 */
+  margin-top: 1.5em; 
 }
 
-/* Each news item: date + description */
 .news-item {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* top align for multi-line text */
-  line-height: 1.5;
-  padding: 0.25rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
-  &:last-child {
-    border-bottom: none;
-  }
+  flex-direction: row; /* 将日期和描述放在同一行 */
+  align-items: flex-start; /* 顶部对齐 */
 }
 
-/* Date column */
 .news-date {
-  flex: 0 0 6.5rem; /* roughly 100px */
-  font-weight: 600;
+  flex: 0 0 100px;  /* 日期栏固定宽度为 100px */
+  font-weight: bold;
   text-align: right;
-  padding-right: 1.25rem;
-  color: $text-color-light; /* use theme variable */
-  font-size: 0.95em;
-  white-space: nowrap; /* keep date in one line */
+  padding-right: 20px; /* 日期和描述之间的间距 */
+  color: #555; /* 使用一个标准的灰色，而不是变量 */
 }
 
-/* Description text */
 .news-description {
-  flex: 1;
+  flex: 1; /* 描述栏占据剩余空间 */
   text-align: left;
-  color: $text-color;
-  font-size: 1em;
 }
 
-/* Remove unwanted spacing from Markdown-rendered paragraphs */
+/* 移除 Markdown 自动添加的段落边距，使排版更紧凑 */
 .news-description p {
   margin: 0;
-}
-
-/* Responsive layout: stack date above description on small screens */
-@media (max-width: 600px) {
-  .news-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-  }
-
-  .news-date {
-    text-align: left;
-    padding-right: 0;
-    font-weight: 700;
-  }
 }

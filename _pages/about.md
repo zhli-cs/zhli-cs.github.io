@@ -22,18 +22,14 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 <div class="news-container">
 
   <div class="news-item">
-    <div class="news-date">
-      <strong>Jan, 2025</strong>
-    </div>
+    <div class="news-date">Jan, 2025</div>
     <div class="news-description">
       Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE Transactions on Multimedia</em>.
     </div>
   </div>
 
   <div class="news-item">
-    <div class="news-date">
-      <strong>Feb, 2024</strong>
-    </div>
+    <div class="news-date">Feb, 2024</div>
     <div class="news-description">
       Our paper, "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval", has been accepted by <em>Neural Networks</em>.
     </div>
