@@ -1,11 +1,7 @@
 ---
 permalink: /
-title: "About me" 
+title: "" 
 show_title: false
-author_profile: true
-sidebar:
-  - title: "Live Visitor Map"
-    text: '<script type="text/javascript" id="mapmyvisitors" src="<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>"></script>'
 redirect_from: 
   - /about/
   - /about.html
@@ -71,5 +67,5 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
     </div>
 </div>
 
-
+<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>
 
