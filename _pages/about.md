@@ -67,6 +67,6 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 ## Live Visitor Map
 
-<div align="center">
-<script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>
+<div style="max-width: 400px; height: 300px; margin: 0 auto;">
+  <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>
 </div>
