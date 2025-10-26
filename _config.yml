@@ -28,11 +28,11 @@ author:
   location         : "London, Ontario, Canada"
   employer         : "Western University"
   uri              : # URL
-  # email            : "zli3446@uwo.ca" 
-  links:
-    - label: "zli3446@uwo.ca"
-      icon: "fas fa-fw fa-at"  # <-- CHANGE THIS from fa-envelope to fa-at
-      url: "mailto:zli3446@uwo.ca"
+  email            : "zli3446@uwo.ca" 
+  # links:
+  #   - label: "zli3446@uwo.ca"
+  #     icon: "fas fa-fw fa-at"  # <-- CHANGE THIS from fa-envelope to fa-at
+  #     url: "mailto:zli3446@uwo.ca"
 
   # Academic websites
   arxiv            : # 
