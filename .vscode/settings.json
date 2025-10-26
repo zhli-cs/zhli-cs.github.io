@@ -1,0 +1,5 @@
+{
+  // Disable SCSS validation for Jekyll files with YAML front matter
+  "scss.validate": false,
+  "css.validate": false
+}

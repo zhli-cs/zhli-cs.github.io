@@ -11,11 +11,35 @@ Hi! I'm Zhihao, a first-year Ph.D. student at Western University. I'm fortunate 
 
 Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://en.tju.edu.cn/) in 2024, where I focused my research on Cross-Modal Retrieval under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
 
-# News
+<!-- # News
 
-[2025.01]  Our paper "Visual Semantic Contextualization Network for Multi-Query Image Retrieval" has been accepted by _IEEE Transactions on Multimedia_. 
+<strong>Jan, 2025</strong>  Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE Transactions on Multimedia</em>. 
 
-[2024.02]  Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" has been accepted by _Neural Networks_. 
+<strong>Feb, 2024</strong>  Our paper, "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval", has been accepted by <em>Neural Networks</em>.  -->
+
+<h2>News</h2>
+
+<div class="news-container">
+
+  <div class="news-item">
+    <div class="news-date">
+      <strong>Jan, 2025</strong>
+    </div>
+    <div class="news-description">
+      Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE Transactions on Multimedia</em>.
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-date">
+      <strong>Feb, 2024</strong>
+    </div>
+    <div class="news-description">
+      Our paper, "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval", has been accepted by <em>Neural Networks</em>.
+    </div>
+  </div>
+
+</div>
 
 # Selected Publications
 (Note: * indicates equal contribution.)
