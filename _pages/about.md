@@ -20,9 +20,10 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 [2024.02]  Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" has been accepted by _Neural Networks_. 
 
 # Selected Publications
+(Note: * indicates equal contribution.)
 
-<div style="display: flex; align-items: center; margin-bottom: 30px;">
-    <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 300px; margin-right: 20px;">
+<div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
+    <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 200px; margin-right: 20px;">
     <div>
         <strong>Hierarchical matching and reasoning for multi-query image retrieval</strong><br>
         Zhong Ji, <strong>Zhihao Li</strong>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li<br>
@@ -31,8 +32,8 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
     </div>
 </div>
 
-<div style="display: flex; align-items: center;">
-    <img src="../images/paper_VSCN.png" alt="Paper Image" style="width: 300px; margin-right: 20px;">
+<div style="display: flex; align-items: flex-start;">
+    <img src="../images/paper_VSCN.png" alt="Paper Image" style="width: 200px; margin-right: 20px;">
     <div>
         <strong>Visual Semantic Contextualization Network for Multi-Query Image Retrieval</strong><br>
         Zhong Ji*, <strong>Zhihao Li*</strong>, Yan Zhang, Yanwei Pang, Xuelong Li<br>
