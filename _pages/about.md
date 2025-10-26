@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "👋 Hi there, I'm Zhihao!"
+title: 
 author_profile: true
 redirect_from: 
   - /about/
@@ -21,7 +21,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 
 # Selected Publications
 
-<div style="display: flex; align-items: center;">
+<div style="display: flex; align-items: center; margin-bottom: 30px;">
     <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 300px; margin-right: 20px;">
     <div>
         <strong>Hierarchical matching and reasoning for multi-query image retrieval</strong><br>
