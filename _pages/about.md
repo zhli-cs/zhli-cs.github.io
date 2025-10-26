@@ -3,7 +3,7 @@ permalink: /
 title: "About Me" 
 sidebar:
   - title: "Live Visitor Map"
-    html: '<script type="text/javascript" id="mapmyvisitors" src="<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>"></script>'
+    html: '<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>'
 redirect_from: 
   - /about/
   - /about.html
@@ -62,6 +62,4 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
         <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242">Paper</a> | <a href="https://github.com/zhli-cs/HMRN">Code</a>
     </div>
 </div>
-
-<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>
 
