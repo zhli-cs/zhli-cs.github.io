@@ -28,7 +28,11 @@ author:
   location         : "London, Ontario, Canada"
   employer         : "Western University"
   uri              : # URL
-  email            : "zli3446@uwo.ca" 
+  # email            : "zli3446@uwo.ca" 
+  links:
+    - label: "zli3446@uwo.ca"   # <-- 1. 在这里显示你的邮箱地址
+      icon: "fas fa-fw fa-envelope"   # <-- 2. 使用邮件图标
+      url: "mailto:zli3446@uwo.ca" # <-- 3. 添加 mailto: 链接
 
   # Academic websites
   arxiv            : # 
