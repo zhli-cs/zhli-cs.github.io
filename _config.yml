@@ -12,7 +12,7 @@ title                    : "Zhihao Li/Personal Homepage"
 title_separator          : "-"
 name                     : &name "Zhihao Li"
 description              : &description "personal description"
-url                      :      # the base hostname & protocol for your site e.g. "https://xxx.io" zhli-cs.github.io
+url                      : https://zhli-cs.github.io     # the base hostname & protocol for your site e.g. "https://xxx.io" 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : ""
 
@@ -28,7 +28,7 @@ author:
   location         : "London, Ontario, Canada"
   employer         : 
   uri              : # URL
-  email            : "zhihao.lics@gmail.com" 
+  email            : "zli3446@uwo.ca" 
 
   # Academic websites
   arxiv            : # 
@@ -44,7 +44,7 @@ author:
   bitbucket        : # 
   codepen          : # 
   dribbble         : # 
-  github           : # "https://github.com/zhli-cs"
+  github           : "zhli-cs"
   kaggle           : #   
   stackoverflow    : #    
 
