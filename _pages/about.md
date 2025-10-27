@@ -23,21 +23,21 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
   <div class="news-item">
     <div class="news-date">Jan, 2025</div>
     <div class="news-description">
-      Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", has been accepted by <em>IEEE TMM</em>.
+      Our paper, "Visual Semantic Contextualization Network for Multi-Query Image Retrieval", was accepted by <em>IEEE TMM</em>.
     </div>
   </div>
 
   <div class="news-item">
     <div class="news-date">Jan, 2025</div>
     <div class="news-description">
-      Begin Ph.D. studies at Western University.
+      Began Ph.D. studies at Western University.
     </div>
   </div>
 
   <div class="news-item">
     <div class="news-date">Feb, 2024</div>
     <div class="news-description">
-      Our paper, "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval", has been accepted by <em>Neural Networks</em>.
+      Our paper, "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval", was accepted by <em>Neural Networks</em>.
     </div>
   </div>
 
