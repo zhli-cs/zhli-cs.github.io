@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me" 
+title: "Hi there 👋" 
 # sidebar:
 #   - title: "Live Visitor Map"
 #     # text: '<script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=dV7Qzbdv-RPP8hT9v1_Of6hBDaV3otFu3tYEtnOosE8&cl=ffffff&w=a"></script>'
@@ -11,6 +11,7 @@ redirect_from:
   - /about.html
 ---
 
+<h2>About Me</h2>
 Hi! I'm Zhihao, a first-year Ph.D. student at Western University. I'm fortunate to be co-supervised by [Prof. Boyu Wang](https://sites.google.com/site/borriewang/home) and [Prof. Charles Ling](https://www.csd.uwo.ca/~xling/). 
 
 Before beginning my Ph.D., I earned my Master's degree from [Tianjin University](https://en.tju.edu.cn/) in 2024, where I focused my research on Cross-Modal Retrieval under the guidance of [Prof. Zhong Ji](https://faculty.tju.edu.cn/zhongJi/en/index.htm). Prior to this, I obtained my Bachelor's degree from [Shandong University](https://www.en.sdu.edu.cn) in 2021. 
