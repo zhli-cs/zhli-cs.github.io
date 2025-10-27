@@ -57,7 +57,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 </div>
 
 <div style="display: flex; align-items: flex-start;">
-    <img src="../images/paper_HMRN_hierarchy.png" alt="Paper Image" style="width: 150px; margin-right: 20px;">
+    <img src="../images/paper_HMRN.png" alt="Paper Image" style="width: 150px; margin-right: 20px;">
     <div>
         <strong>Hierarchical matching and reasoning for multi-query image retrieval</strong><br>
         Zhong Ji, <strong>Zhihao Li</strong>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li<br>
