@@ -44,7 +44,7 @@ Before beginning my Ph.D., I earned my Master's degree from [Tianjin University]
 </div>
 
 <h2>Selected Publications</h2>
-(Note: * indicates equal contribution.)
+(Note: * indicates equal contributions.)
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 30px;">
     <img src="../images/paper_VSCN.png" alt="Paper Image" style="width: 150px; margin-right: 20px;">
