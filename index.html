@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhihao Li | Western University</title>
+    
+    <!-- 引入谷歌字体：Inter (现代化无衬线字体，比Lato更适合屏幕阅读) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* 配色方案：经典学术蓝 + 现代灰 */
+            --primary-color: #2563eb; /* 亮蓝色，更现代 */
+            --dark-text: #111827;
+            --medium-text: #4b5563;
+            --light-text: #6b7280;
+            --bg-color: #f9fafb; /* 极淡的灰背景，护眼 */
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --hover-bg: #f3f4f6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 50px 60px;
+            background-color: var(--card-bg);
+            /* 增加卡片阴影效果 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border-radius: 12px;
+        }
+
+        /* 链接样式 */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* Header 部分 */
+        header {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--dark-text);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-text);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+            font-size: 0.95rem;
+            color: var(--medium-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info i {
+            color: var(--light-text);
+            width: 18px;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            margin-right: 20px;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .profile-img img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px; /* 方形圆角 */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* 标题样式 */
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: var(--dark-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        /* 标题前的装饰小块 */
+        h2::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        /* About & Text */
+        p {
+            margin-bottom: 1rem;
+            color: var(--medium-text);
+            text-align: justify;
+        }
+
+        /* News 列表 */
+        .news-list {
+            list-style: none;
+            padding: 0;
+        }
+        .news-list li {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: baseline;
+        }
+        .news-date {
+            flex-shrink: 0;
+            width: 100px;
+            font-family: 'Inter', monospace; /* 等宽数字更好看 */
+            font-weight: 600;
+            color: var(--medium-text);
+            font-size: 0.9rem;
+        }
+        .news-content {
+            font-size: 0.95rem;
+        }
+
+        /* Publications 列表 */
+        .pub-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: #fff;
+        }
+        .pub-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-color: #d1d5db;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .pub-authors {
+            font-size: 0.95rem;
+            color: var(--medium-text);
+            margin-bottom: 6px;
+        }
+        
+        .me {
+            color: var(--dark-text);
+            font-weight: 600;
+            text-decoration: underline;
+            text-decoration-color: var(--primary-color);
+            text-decoration-thickness: 2px;
+        }
+
+        .pub-venue {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .tag-conf { color: #c2410c; font-weight: 600; font-style: normal;} /* Orange for Conf */
+        .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal;} /* Purple for Journal */
+
+        .pub-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 12px;
+            padding: 2px 0;
+        }
+
+        /* Internship Styling */
+        .exp-item {
+            margin-bottom: 30px;
+        }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+        .exp-company {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+        }
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            font-family: 'Inter', monospace;
+        }
+        .exp-role {
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .exp-desc {
+            font-size: 0.95rem;
+            color: var(--medium-text);
+        }
+
+        /* Service Styling */
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+        .service-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .service-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+            }
+            .profile-img img {
+                width: 150px;
+                height: 150px;
+            }
+            .contact-info p {
+                justify-content: center;
+            }
+            h1 { font-size: 2.2rem; }
+            .exp-header {
+                flex-direction: column;
+            }
+            .news-list li {
+                flex-direction: column;
+            }
+            .news-date {
+                margin-bottom: 4px;
+            }
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--light-text);
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <div class="profile-text">
+            <h1>Zhihao Li</h1>
+            <div class="subtitle">Ph.D. Student at Western University</div>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> London, Ontario, Canada</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:zli3446@uwo.ca">zli3446@uwo.ca</a></p>
+            </div>
+
+            <div class="social-links">
+                <!-- 链接占位符，请填入您的真实地址 -->
+                <a href="#"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+        
+        <div class="profile-img">
+            <!-- 记得替换图片 -->
+            <img src="avatar.jpg" alt="Zhihao Li">
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I’m Zhihao, a first-year Ph.D. student at <strong>Western University</strong>. 
+            I’m fortunate to be co-supervised by <a href="#">Prof. Boyu Wang</a> and <a href="#">Prof. Charles Ling</a>. 
+            My research focuses on <strong>Unlearnable Examples</strong>, <strong>Data Privacy</strong>, and <strong>Trustworthy AI</strong>.
+        </p>
+        <p>
+            Before beginning my Ph.D., I earned my Master’s degree from <strong>Tianjin University</strong> in 2024, 
+            where I focused my research on Cross-Modal Retrieval under the guidance of Prof. Zhong Ji. 
+            Prior to this, I obtained my Bachelor’s degree from <strong>Shandong University</strong> in 2021.
+        </p>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+            <li>
+                <span class="news-date">Sep. 2025</span>
+                <span class="news-content">Our paper "Versatile Transferable Unlearnable Example Generator" was accepted by <strong>NeurIPS 2025</strong>! 🎉</span>
+            </li>
+            <li>
+                <span class="news-date">Jan. 2025</span>
+                <span class="news-content">Our paper "Visual Semantic Contextualization Network for Multi-Query Image Retrieval" was accepted by <strong>IEEE TMM</strong>! 🎉</span>
+            </li>
+            <li>
+                <span class="news-date">Jan. 2025</span>
+                <span class="news-content">Began Ph.D. studies at Western University.</span>
+            </li>
+            <li>
+                <span class="news-date">Feb. 2024</span>
+                <span class="news-content">Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" was accepted by <strong>Neural Networks</strong>! 🎉</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <h2>Selected Publications</h2>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 25px; margin-top: -15px;">* Indicates Equal Contribution</p>
+
+        <!-- Paper 1: NeurIPS -->
+        <div class="pub-item">
+            <a href="#" class="pub-title">Versatile Transferable Unlearnable Example Generator</a>
+            <div class="pub-authors">
+                <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, Hao Zheng, Qiuyue Li, Fan Zhou, Shichun Yang, Charles Ling, Boyu Wang
+            </div>
+            <div class="pub-venue">
+                Conference on Neural Information Processing Systems (NeurIPS), 2025 <span class="tag-conf">(Conference)</span>
+            </div>
+            <div class="pub-links">
+                <a href="#">[Paper]</a> <a href="#">[Code]</a>
+            </div>
+        </div>
+
+        <!-- Paper 2: TMM -->
+        <div class="pub-item">
+            <a href="#" class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</a>
+            <div class="pub-authors">
+                Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, Yanwei Pang, Xuelong Li
+            </div>
+            <div class="pub-venue">
+                IEEE Transactions on Multimedia (TMM), 2025 <span class="tag-jour">(Journal)</span>
+            </div>
+            <div class="pub-links">
+                <a href="#">[Paper]</a> <a href="#">[Code]</a>
+            </div>
+        </div>
+
+        <!-- Paper 3: Neural Networks -->
+        <div class="pub-item">
+            <a href="#" class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</a>
+            <div class="pub-authors">
+                Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li
+            </div>
+            <div class="pub-venue">
+                Neural Networks, 2024 <span class="tag-jour">(Journal)</span>
+            </div>
+            <div class="pub-links">
+                <a href="#">[Paper]</a> <a href="#">[Code]</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Internship -->
+    <section id="internship">
+        <h2>Internship Experience</h2>
+        
+        <div class="exp-item">
+            <div class="exp-header">
+                <span class="exp-company">Meituan</span>
+                <span class="exp-date">Apr. 2024 - Aug. 2024</span>
+            </div>
+            <div class="exp-role">Large Language Model Algorithm Engineer</div>
+            <div class="exp-desc">
+                <i class="fas fa-map-marker-alt" style="margin-right: 5px; color:#999;"></i> Beijing, China<br>
+                <strong>Project:</strong> Geometric Reasoning with Multi-modal Large Language Model
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Service -->
+    <section id="service">
+        <h2>Academic Service</h2>
+        <ul class="service-list">
+            <li>
+                <strong>Conference Reviewer:</strong> NeurIPS 2025, AAAI 2026, ICLR 2026
+            </li>
+            <li>
+                <strong>Journal Reviewer:</strong> TCSVT, KBS, SCIS, Neural Networks
+            </li>
+            <li>
+                <strong>Teaching Assistant:</strong> 
+                <br><span style="color:var(--medium-text); font-size:0.95rem;">CS2209 (Applied Logic), DS3000 (Machine Learning)</span>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Zhihao Li. Powered by GitHub Pages.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
