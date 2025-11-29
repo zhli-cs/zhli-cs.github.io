@@ -15,30 +15,29 @@
     
     <style>
         :root {
-            /* ☀️ 亮色模式 (默认) */
-            --primary-color: #3b82f6; /* 亮天蓝色 */
+            /* 🎨 配色：学术亮蓝 */
+            --primary-color: #1565c0; 
+            
             --dark-text: #1f2937;
             --medium-text: #4b5563;
             --light-text: #9ca3af;
             --bg-color: #f9fafb;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            
-            /* ✨ Badge颜色：深海蓝 */
-            --badge-bg: #2b5493; 
+            --badge-bg: #1565c0; 
             --nav-text: #1f2937;
         }
 
-        /* 🌙 暗色模式 (Dark Mode) */
+        /* 🌙 暗色模式 */
         [data-theme="dark"] {
-            --primary-color: #60a5fa; /* 暗模式下蓝色稍微亮一点 */
-            --dark-text: #f3f4f6;     /* 接近白色 */
-            --medium-text: #d1d5db;   /* 浅灰 */
+            --primary-color: #60a5fa; 
+            --dark-text: #f3f4f6;
+            --medium-text: #d1d5db;
             --light-text: #9ca3af;
-            --bg-color: #111827;      /* 深黑蓝背景 */
-            --card-bg: #1f2937;       /* 卡片深灰背景 */
+            --bg-color: #111827;
+            --card-bg: #1f2937;
             --border-color: #374151;
-            --badge-bg: #3b82f6;      /* 暗模式下Badge稍微亮一点 */
+            --badge-bg: #3b82f6;
             --nav-text: #f3f4f6;
         }
 
@@ -161,33 +160,27 @@
         }
         .pub-item:last-child { border-bottom: none; }
 
-        /* Left Side: Image & Badge */
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 160px; /* 图片容器宽度 */
+            width: 160px; /* 图片宽度 */
             margin-top: 10px;
         }
 
-        /* ✨ 修改：Badge 宽度与图片一致 */
+        /* Badge: 宽度100% (即160px), 居中, 悬浮 */
         .pub-badge {
             position: absolute;
             top: -6px; 
-            
-            /* 修改这里：左对齐，宽度100% (即160px)，不再需要 translateX */
             left: 0;
             width: 100%;
             transform: translateY(-50%);
-            
             text-align: center;
-            
             background-color: var(--badge-bg);
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
             padding: 4px 0;
             border-radius: 6px;
-            
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             z-index: 10;
             font-family: 'Inter', sans-serif;
@@ -196,7 +189,7 @@
         }
 
         .pub-img-wrapper {
-            margin-top: 15px; /* 保持顶部空间 */
+            margin-top: 15px; /* 顶部留白给Badge */
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid var(--border-color);
@@ -216,9 +209,9 @@
             transform: scale(1.03);
         }
 
-        /* Right Side: Content */
         .pub-content { flex: 1; }
 
+        /* 纯文本标题 */
         .pub-title {
             font-size: 1.15rem;
             font-weight: 700;
@@ -230,11 +223,10 @@
         
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
         
-        /* ✨ 修改：名字只加粗，去掉下划线 */
         .me {
             color: var(--dark-text);
-            font-weight: 700; /* 加粗 */
-            text-decoration: none; /* 去掉下划线 */
+            font-weight: 700; /* 仅加粗 */
+            text-decoration: none;
         }
 
         .pub-venue {
@@ -244,12 +236,10 @@
             margin-bottom: 12px;
         }
         
-        /* ✨ 修改：Conference 标签更红一点 */
-        .tag-conf { color: #dc2626; font-weight: 600; font-style: normal; } /* Red-600 */
+        .tag-conf { color: #dc2626; font-weight: 600; font-style: normal; } 
         .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        /* Buttons */
         .pub-links a {
             display: inline-block;
             font-size: 0.8rem;
@@ -346,30 +336,11 @@
             border-left: 3px solid var(--primary-color);
         }
 
-        /* --- Service List Fix --- */
-        .service-list {
-            list-style: none; /* 关键：去掉默认黑点 */
-            padding: 0;
-            margin: 0;
-        }
-        .service-list li {
-            margin-bottom: 10px;
-            padding-left: 20px; /* 给自定义圆点留位置 */
-            position: relative;
-            color: var(--medium-text);
-        }
-        .service-list li::before {
-            content: "•"; /* 自定义蓝点 */
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-            font-size: 1.1rem; /* 稍微大一点点 */
-            line-height: 1.5rem; /* 对齐文字 */
-        }
-        .service-list strong {
-            color: var(--dark-text);
-        }
+        /* --- Service List --- */
+        .service-list { list-style: none; padding: 0; margin: 0; }
+        .service-list li { margin-bottom: 10px; padding-left: 20px; position: relative; color: var(--medium-text); }
+        .service-list li::before { content: "•"; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; font-size: 1.1rem; line-height: 1.5rem; }
+        .service-list strong { color: var(--dark-text); }
 
         /* --- Navigation Bar --- */
         .navbar {
@@ -382,11 +353,7 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
 
         .nav-links a {
             color: var(--nav-text);
@@ -397,25 +364,9 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-color);
-        }
-        
-        /* 下划线动效 */
-        .nav-links a::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width .3s;
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-        }
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
+        /* Active 和 Hover 变色 */
+        .nav-links a.active { color: var(--primary-color); font-weight: 600; }
+        .nav-links a:hover { color: var(--primary-color); }
 
         .nav-icon {
             cursor: pointer;
@@ -424,11 +375,8 @@
             margin-left: 10px;
             transition: color 0.3s;
         }
-        .nav-icon:hover {
-            color: var(--primary-color);
-        }
+        .nav-icon:hover { color: var(--primary-color); }
         
-        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
             header { flex-direction: column-reverse; text-align: center; gap: 20px;}
@@ -450,9 +398,9 @@
     <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="publications.html">Publications</a>
-        <!-- Profile 已移除 -->
         <i class="fas fa-search nav-icon" onclick="goToSearch()"></i>
-        <i class="fas fa-moon nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
+        <!-- 使用 'far' 样式，显示细线条图标 -->
+        <i class="far fa-sun nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
     </div>
 </nav>
     
@@ -520,7 +468,7 @@
                 </div>
             </div>
             <div class="pub-content">
-                <a href="#" class="pub-title">Versatile Transferable Unlearnable Example Generator</a>
+                <span class="pub-title">Versatile Transferable Unlearnable Example Generator</span>
                 <div class="pub-authors">
                     <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, Hao Zheng, Qiuyue Li, Fan Zhou, Shichun Yang, Charles Ling, Boyu Wang
                 </div>
@@ -542,7 +490,7 @@
                 </div>
             </div>
             <div class="pub-content">
-                <a href="#" class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</a>
+                <span class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</span>
                 <div class="pub-authors">
                     Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, Yanwei Pang, Xuelong Li
                 </div>
@@ -564,7 +512,7 @@
                 </div>
             </div>
             <div class="pub-content">
-                <a href="#" class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</a>
+                <span class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</span>
                 <div class="pub-authors">
                     Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li
                 </div>
@@ -585,14 +533,13 @@
         <!-- Preprint 1: Eagle -->
         <div class="pub-item">
             <div class="pub-figure">
-                <!-- 这里的Badge颜色用了深灰色，以示区分 -->
                 <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
                 <div class="pub-img-wrapper">
                     <img src="imgs/EAGLE_framework.png" alt="Eagle Paper">
                 </div>
             </div>
             <div class="pub-content">
-                <a href="#" class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</a>
+                <span class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</span>
                 <div class="pub-authors">
                     <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                 </div>
@@ -600,7 +547,6 @@
                     arXiv Preprint <span class="tag-preprint">(Preprint), 2024</span>
                 </div>
                 <div class="pub-links">
-                    <!-- ✨ 修改：PDF -> Paper -->
                     <a href="https://arxiv.org/abs/2408.11397">Paper</a>
                 </div>
             </div>
@@ -655,15 +601,12 @@
 
 </div>
 
-<!-- 脚本：控制暗色模式和搜索跳转 -->
+<!-- 脚本 -->
 <script>
-    // 1. 搜索跳转功能
     function goToSearch() {
-        // 跳转到 publications 页面并聚焦搜索框
         window.location.href = "publications.html?focus=true";
     }
 
-    // 2. 暗色模式逻辑
     function toggleTheme() {
         const body = document.body;
         const icon = document.getElementById('theme-toggle');
@@ -671,24 +614,28 @@
         
         if (isDark) {
             body.removeAttribute('data-theme');
-            icon.classList.remove('fa-sun');
-            icon.classList.add('fa-moon');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
             localStorage.setItem('theme', 'light');
         } else {
             body.setAttribute('data-theme', 'dark');
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
             localStorage.setItem('theme', 'dark');
         }
     }
 
-    // 页面加载时应用保存的主题
     window.onload = function() {
         const savedTheme = localStorage.getItem('theme');
         const icon = document.getElementById('theme-toggle');
         
+        // 确保初始化时使用正确的图标
         if (savedTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+        } else {
+            // 亮色模式（默认）
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
         }
