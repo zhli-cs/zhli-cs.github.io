@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhihao Li | University of Western Ontario</title>
+    <title>Zhihao Li | Western University</title>
     
     <!-- 字体: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- 图标: FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* 1. 链接/装饰用的亮蓝色 (保持不变) */
-            --link-blue: #1565c0; 
+            /* ☀️ 亮色模式配色 */
             
-            /* 2. 导航栏和Badge用的深蓝色 (与导航一致) */
-            --nav-badge-blue: #1565c0;
+            /* 1. 装饰/交互亮蓝 (保留用于按钮悬停、装饰条) */
+            --link-blue: #3b82f6; 
+            
+            /* 2. 核心深蓝 (用于导航、Badge、重要文字链接) -> #1565c0 */
+            --nav-badge-blue: #1565c0; 
 
             --dark-text: #1f2937;
             --medium-text: #4b5563;
@@ -28,13 +30,16 @@
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
             --nav-text: #1f2937;
+            
+            --badge-bg: #1565c0; 
         }
 
-        /* 🌙 暗色模式 */
+        /* 🌙 暗色模式配色 */
         [data-theme="dark"] {
-            --link-blue: #1d4ed8; 
-            --nav-badge-blue: #1d4ed8; /* 暗模式下深蓝看不清，稍微提亮 */
-            
+            --link-blue: #60a5fa; 
+            --nav-badge-blue: #1d4ed8; /* 深邃蓝 */
+            --badge-bg: #1d4ed8;
+
             --dark-text: #f3f4f6;
             --medium-text: #d1d5db;
             --light-text: #9ca3af;
@@ -64,9 +69,9 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
 
-        /* 通用链接颜色：使用亮蓝色 */
+        /* 通用链接样式 */
         a {
-            color: var(--link-blue);
+            color: var(--nav-badge-blue); 
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -76,53 +81,104 @@
         }
         [data-theme="dark"] a:hover { color: #93c5fd; }
 
-        /* --- Header --- */
+        /* --- Header Layout --- */
         header {
             display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-bottom: 50px;
+            align-items: flex-start;
+            gap: 60px;
+            margin-bottom: 60px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 40px;
+            padding-bottom: 50px;
+            padding-top: 10px;
         }
 
-        .profile-text { flex: 1; }
+        .profile-text {
+            flex: 1;
+        }
 
         h1 {
-            font-size: 2.8rem;
-            margin: 0 0 10px 0;
-            font-weight: 700;
+            font-size: 3.2rem;
+            margin: 0 0 15px 0;
+            font-weight: 800;
             color: var(--dark-text);
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--medium-text);
-            margin-bottom: 20px;
+        .role {
+            font-size: 1.3rem;
             font-weight: 500;
+            color: var(--dark-text); 
+            margin-bottom: 5px;
+        }
+
+        .university {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--dark-text);
+            margin-bottom: 25px;
+        }
+        
+        .university a {
+            color: var(--dark-text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .university a:hover {
+            color: var(--link-blue);
         }
 
         .contact-info p {
             margin: 8px 0;
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--medium-text);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
         
-        .contact-info i { color: var(--light-text); width: 18px; text-align: center;}
+        .contact-info a {
+            color: var(--medium-text);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-info a:hover {
+            color: var(--link-blue);
+            text-decoration: underline;
+        }
+        
+        .contact-info i {
+            color: var(--light-text);
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
+        }
 
-        .social-links { margin-top: 15px; }
-        .social-links a { margin-right: 20px; font-weight: 600; font-size: 0.95rem; }
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            font-weight: 400;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--nav-badge-blue);
+        }
+        .social-links a:hover {
+            opacity: 0.8;
+            text-decoration: none;
+        }
 
         .profile-img img {
-            width: 180px;
-            height: 180px;
+            width: 220px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         /* --- Section Titles --- */
@@ -141,7 +197,6 @@
             display: block;
             width: 6px;
             height: 24px;
-            /* 装饰条保持亮蓝色，增加活力 */
             background-color: var(--link-blue);
             border-radius: 3px;
         }
@@ -172,7 +227,7 @@
             margin-top: 10px;
         }
 
-        /* Badge: 使用深蓝色 (--nav-badge-blue) */
+        /* Badge: 宽度100% (即160px) */
         .pub-badge {
             position: absolute;
             top: -6px; 
@@ -181,8 +236,7 @@
             transform: translateY(-50%);
             text-align: center;
             
-            /* 这里应用深蓝色 */
-            background-color: var(--nav-badge-blue);
+            background-color: var(--badge-bg);
             
             color: white;
             font-size: 0.75rem;
@@ -247,7 +301,6 @@
         .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        /* Buttons: 保持亮蓝色 */
         .pub-links a {
             display: inline-block;
             font-size: 0.8rem;
@@ -267,27 +320,27 @@
             text-decoration: none;
         }
 
-        /* --- Internship Card Style --- */
+        /* --- Internship Card Style (美化版) --- */
         .intern-item {
             display: flex;
             gap: 20px;
-            padding: 20px;
+            padding: 25px; /* 内边距加大 */
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 12px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .intern-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             border-color: #d1d5db;
         }
 
         .intern-logo {
             flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             display: flex;
@@ -296,52 +349,68 @@
             background: #fff;
         }
         .intern-logo img {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             object-fit: contain;
-            padding: 2px;
         }
 
-        .intern-content { flex: 1; }
+        .intern-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
 
-        .intern-header {
+        /* 第一行：公司 & 日期 */
+        .intern-row-primary {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 4px;
+            align-items: baseline;
+        }
+        
+        /* 第二行：职位 & 地点 */
+        .intern-row-secondary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
         }
 
         .intern-company {
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             color: var(--dark-text);
         }
 
-        .intern-role {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--link-blue);
-            margin-bottom: 8px;
+        .intern-date {
+            font-family: 'Inter', monospace;
+            color: var(--light-text);
+            font-size: 0.9rem;
         }
 
-        .intern-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 0.85rem;
-            color: var(--light-text);
-            margin-bottom: 10px;
-            align-items: center;
+        .intern-role {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--nav-badge-blue); /* 深海蓝 */
         }
-        .intern-meta i { width: 14px; text-align: center; }
+
+        .intern-location {
+            font-size: 0.9rem;
+            color: var(--medium-text);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .intern-location i { color: var(--light-text); }
 
         .intern-desc {
             font-size: 0.95rem;
             color: var(--medium-text);
-            line-height: 1.5;
+            line-height: 1.6;
             background-color: var(--bg-color);
-            padding: 10px 12px;
-            border-radius: 6px;
-            border-left: 3px solid var(--link-blue);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--nav-badge-blue);
         }
 
         /* --- Service List --- */
@@ -372,7 +441,6 @@
             transition: color 0.3s;
         }
 
-        /* Active 和 Hover 使用深蓝色 */
         .nav-links a.active { color: var(--nav-badge-blue); font-weight: 600; }
         .nav-links a:hover { color: var(--nav-badge-blue); }
 
@@ -385,12 +453,27 @@
         }
         .nav-icon:hover { color: var(--nav-badge-blue); }
         
+        /* Mobile */
         @media (max-width: 768px) {
             .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
-            header { flex-direction: column-reverse; text-align: center; gap: 20px;}
+            header { flex-direction: column-reverse; text-align: center; gap: 30px; }
+            .contact-info p { justify-content: center; }
+            .social-links { justify-content: center; }
+            h1 { font-size: 2.5rem; }
+            .role, .university { font-size: 1.1rem; }
             .pub-item { flex-direction: column; }
             .pub-figure { width: 100%; max-width: 300px; margin-bottom: 10px; margin-top: 25px;}
-            .intern-header { flex-direction: column; }
+            
+            .intern-row-primary, .intern-row-secondary {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 2px;
+            }
+            .intern-date, .intern-location {
+                font-size: 0.85rem;
+                margin-bottom: 5px;
+            }
+            .intern-row-secondary { margin-bottom: 10px; }
         }
 
         footer {
@@ -416,14 +499,24 @@
     <!-- Header -->
     <header>
         <div class="profile-text">
+            <!-- 名字 -->
             <h1>Zhihao Li</h1>
-            <div class="subtitle">Ph.D. Student at the University of Western Ontario</div>
             
+            <!-- 第一行：职位 -->
+            <div class="role">Ph.D. Student in Computer Science</div>
+            
+            <!-- 第二行：学校 (深色链接) -->
+            <div class="university">
+                <a href="https://www.uwo.ca/index.html" target="_blank">University of Western Ontario</a>
+            </div>
+            
+            <!-- 联系方式 -->
             <div class="contact-info">
                 <p><i class="fas fa-map-marker-alt"></i> London, Ontario, Canada</p>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:zli3446@uwo.ca">zli3446@uwo.ca</a></p>
             </div>
 
+            <!-- 社交链接 (深色) -->
             <div class="social-links">
                 <a href="https://scholar.google.com/citations?user=0qvskoEAAAAJ&hl"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                 <a href="https://github.com/zhli-cs"><i class="fab fa-github"></i> GitHub</a>
@@ -439,14 +532,14 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hi! I’m Zhihao, a first-year Ph.D. student in the Machine Learning group at the University of Western Ontario. 
+            Hi! I’m Zhihao, a first-year Ph.D. student at <strong>Western University</strong>. 
             I’m fortunate to be co-supervised by <a href="https://sites.google.com/site/borriewang">Prof. Boyu Wang</a> and <a href="https://www.csd.uwo.ca/~xling/">Prof. Charles Ling</a>. 
             My research focuses on <strong>Unlearnable Examples</strong>, <strong>Data Privacy</strong>, and <strong>Trustworthy AI</strong>.
         </p>
         <p>
-            Before beginning my Ph.D., I earned my Master’s degree from Tianjin University in 2024, 
-            where I focused my research on Cross-Modal Retrieval and Multi-modal Learning under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
-            Prior to this, I obtained my Bachelor’s degree from Shandong University in 2021.
+            Before beginning my Ph.D., I earned my Master’s degree from <strong>Tianjin University</strong> in 2024, 
+            where I focused my research on <strong>Cross-Modal Retrieval</strong> and <strong>Multi-modal Learning</strong> under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
+            Prior to this, I obtained my Bachelor’s degree from <strong>Shandong University</strong> in 2021.
         </p>
     </section>
 
@@ -570,17 +663,18 @@
             </div>
             
             <div class="intern-content">
-                <div class="intern-header">
+                <!-- 第一行：公司 + 日期 -->
+                <div class="intern-row-primary">
                     <span class="intern-company">Meituan</span>
-                    <span style="font-family: 'Inter', monospace; color: var(--light-text); font-size: 0.9rem;">
-                        Apr. 2024 - Aug. 2024
-                    </span>
+                    <span class="intern-date">Apr. 2024 - Aug. 2024</span>
                 </div>
                 
-                <div class="intern-role">Large Language Model Algorithm Engineer Intern</div>
-                
-                <div class="intern-meta">
-                    <span><i class="fas fa-map-marker-alt"></i> Beijing, China</span>
+                <!-- 第二行：职位 + 地点 (地点靠右) -->
+                <div class="intern-row-secondary">
+                    <span class="intern-role">Large Language Model Algorithm Engineer Intern</span>
+                    <span class="intern-location">
+                        <i class="fas fa-map-marker-alt"></i> Beijing, China
+                    </span>
                 </div>
 
                 <div class="intern-desc">
