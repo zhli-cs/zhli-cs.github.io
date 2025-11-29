@@ -350,6 +350,58 @@
             .intern-header { flex-direction: column; }
         }
 
+/* --- Navigation Bar --- */
+        .navbar {
+            display: flex;
+            justify-content: flex-end; /* 靠右对齐 */
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 1rem;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        /* 简单的下划线动效 */
+        .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width .3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-icon {
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--dark-text);
+            margin-left: 10px;
+        }
+        
         footer {
             margin-top: 80px; text-align: center; font-size: 0.85rem; color: var(--light-text);
             border-top: 1px solid var(--border-color); padding-top: 30px;
@@ -358,6 +410,17 @@
 </head>
 <body>
 
+<!-- 顶部导航栏 -->
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="index.html">Profile</a>
+        <i class="fas fa-search nav-icon"></i>
+        <i class="fas fa-moon nav-icon" onclick="toggleTheme()"></i>
+    </div>
+</nav>
+    
 <div class="container">
 
     <!-- Header -->
