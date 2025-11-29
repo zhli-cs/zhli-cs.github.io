@@ -169,31 +169,30 @@
             margin-top: 10px;
         }
 
-        /* ✨ 修改后的 Badge 样式：宽度统一，文字居中 */
+        /* ✨ 修改：Badge 宽度与图片一致 */
         .pub-badge {
             position: absolute;
             top: -6px; 
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
             
-            /* 关键修改：设置固定宽度并居中 */
-            width: 120px;  
+            /* 修改这里：左对齐，宽度100% (即160px)，不再需要 translateX */
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            
             text-align: center;
             
             background-color: var(--badge-bg);
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 4px 0; /* 上下内边距，左右由width控制 */
+            padding: 4px 0;
             border-radius: 6px;
             
-            /* 稍微增强阴影，更有立体感 */
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            
             z-index: 10;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.5px;
-            white-space: nowrap; /* 防止文字换行 */
+            white-space: nowrap;
         }
 
         .pub-img-wrapper {
@@ -231,11 +230,11 @@
         
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
         
+        /* ✨ 修改：名字只加粗，去掉下划线 */
         .me {
             color: var(--dark-text);
-            font-weight: 600;
-            text-decoration: underline;
-            text-decoration-color: var(--primary-color);
+            font-weight: 700; /* 加粗 */
+            text-decoration: none; /* 去掉下划线 */
         }
 
         .pub-venue {
@@ -245,7 +244,8 @@
             margin-bottom: 12px;
         }
         
-        .tag-conf { color: #ea580c; font-weight: 600; font-style: normal; }
+        /* ✨ 修改：Conference 标签更红一点 */
+        .tag-conf { color: #dc2626; font-weight: 600; font-style: normal; } /* Red-600 */
         .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
@@ -597,10 +597,11 @@
                     <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                 </div>
                 <div class="pub-venue">
-                    arXiv Preprint, 2024 <span class="tag-preprint">(Preprint)</span>
+                    arXiv Preprint <span class="tag-preprint">(Preprint), 2024</span>
                 </div>
                 <div class="pub-links">
-                    <a href="https://arxiv.org/abs/2408.11397">PDF</a>
+                    <!-- ✨ 修改：PDF -> Paper -->
+                    <a href="https://arxiv.org/abs/2408.11397">Paper</a>
                 </div>
             </div>
         </div>
