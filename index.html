@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhihao Li | University of Western Ontario</title>
+    <title>Zhihao Li | Western University</title>
     
     <!-- 字体: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,11 +16,7 @@
     <style>
         :root {
             /* ☀️ 亮色模式配色 */
-            
-            /* 1. 装饰/交互亮蓝 (保留用于按钮悬停、装饰条) */
             --link-blue: #3b82f6; 
-            
-            /* 2. 核心深蓝 (用于导航、Badge、重要文字链接) -> #1565c0 */
             --nav-badge-blue: #1565c0; 
 
             --dark-text: #1f2937;
@@ -217,6 +213,7 @@
             gap: 25px;
             padding: 30px 0;
             border-bottom: 1px solid var(--border-color);
+            align-items: flex-start;
         }
         .pub-item:last-child { border-bottom: none; }
 
@@ -224,16 +221,17 @@
             position: relative; 
             flex-shrink: 0;
             width: 160px;
-            margin-top: 10px;
+            margin-top: 0;
         }
 
-        /* Badge */
+        /* Badge 样式 */
         .pub-badge {
             position: absolute;
-            top: -6px; 
+            /* ✨ 关键修改：下调 2px 以对齐右侧文字的视觉顶部 */
+            top: 2px; 
             left: 0;
             width: 100%;
-            transform: translateY(-50%);
+            transform: none;
             text-align: center;
             
             background-color: var(--badge-bg);
@@ -251,7 +249,7 @@
         }
 
         .pub-img-wrapper {
-            margin-top: 15px;
+            margin-top: 34px; /* 增加一点间距，适应Badge下移 */
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid var(--border-color);
@@ -280,6 +278,7 @@
             display: block;
             margin-bottom: 8px;
             line-height: 1.4;
+            margin-top: 0;
         }
         
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
@@ -324,7 +323,7 @@
         .intern-item {
             display: flex;
             gap: 20px;
-            padding: 25px; /* 内边距加大 */
+            padding: 25px;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -362,14 +361,12 @@
             gap: 6px;
         }
 
-        /* 第一行：公司 & 日期 */
         .intern-row-primary {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
         }
         
-        /* 第二行：职位 & 地点 */
         .intern-row-secondary {
             display: flex;
             justify-content: space-between;
@@ -392,7 +389,7 @@
         .intern-role {
             font-size: 1.05rem;
             font-weight: 600;
-            color: var(--nav-badge-blue); /* 深海蓝 */
+            color: var(--nav-badge-blue); 
         }
 
         .intern-location {
@@ -454,7 +451,6 @@
         }
         .nav-icon:hover { color: var(--nav-badge-blue); }
         
-        /* Mobile */
         @media (max-width: 768px) {
             .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
             header { flex-direction: column-reverse; text-align: center; gap: 30px; }
@@ -517,9 +513,8 @@
                 <p>
                     <i class="fas fa-envelope"></i> 
                     <a href="mailto:zli3446@uwo.ca">zli3446@uwo.ca</a>
-                    <!-- 这里填入您的第二个邮箱 -->
                     &nbsp;|&nbsp; 
-                    <a href="mailto:zhihao.lics@gmail.com">zhihao.lics@gmail.com</a>
+                    <a href="mailto:email2@example.com">email2@example.com</a>
                 </p>
             </div>
 
@@ -539,14 +534,14 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hi! I’m Zhihao, a first-year Ph.D. student in the Machine Learning group at <strong> University of Western Ontario</strong>. 
+            Hi! I’m Zhihao, a first-year Ph.D. student at <strong>Western University</strong>. 
             I’m fortunate to be co-supervised by <a href="https://sites.google.com/site/borriewang">Prof. Boyu Wang</a> and <a href="https://www.csd.uwo.ca/~xling/">Prof. Charles Ling</a>. 
             My research focuses on <strong>Unlearnable Examples</strong>, <strong>Data Privacy</strong>, and <strong>Trustworthy AI</strong>.
         </p>
         <p>
-            Before beginning my Ph.D., I earned my Master’s degree from Tianjin University in 2024, 
-            where I focused my research on Cross-Modal Retrieval and Multi-modal Learning under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
-            Prior to this, I obtained my Bachelor’s degree from Shandong University in 2021.
+            Before beginning my Ph.D., I earned my Master’s degree from <strong>Tianjin University</strong> in 2024, 
+            where I focused my research on <strong>Cross-Modal Retrieval</strong> and <strong>Multi-modal Learning</strong> under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
+            Prior to this, I obtained my Bachelor’s degree from <strong>Shandong University</strong> in 2021.
         </p>
     </section>
 
@@ -556,7 +551,7 @@
         <ul class="news-list">
             <li><span class="news-date">Sep. 2025</span> <span>Our paper "Versatile Transferable Unlearnable Example Generator" was accepted by <strong>NeurIPS 2025</strong>! 🎉</span></li>
             <li><span class="news-date">Jan. 2025</span> <span>Our paper "Visual Semantic Contextualization Network for Multi-Query Image Retrieval" was accepted by <strong>IEEE TMM</strong>! 🎉</span></li>
-            <li><span class="news-date">Jan. 2025</span> <span>Began Ph.D. studies at University of Western Ontario.</span></li>
+            <li><span class="news-date">Jan. 2025</span> <span>Began Ph.D. studies at Western University.</span></li>
             <li><span class="news-date">Feb. 2024</span> <span>Our paper "Hierarchical Matching and Reasoning for Multi-Query Image Retrieval" was accepted by <strong>Neural Networks</strong>! 🎉</span></li>
         </ul>
     </section>
