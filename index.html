@@ -165,27 +165,35 @@
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 160px; /* 宽度保持缩小 */
+            width: 160px; /* 图片容器宽度 */
             margin-top: 10px;
         }
 
-        /* Floating Badge Style */
+        /* ✨ 修改后的 Badge 样式：宽度统一，文字居中 */
         .pub-badge {
             position: absolute;
-            top: -6px; /* 向上提 6px */
+            top: -6px; 
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
+            
+            /* 关键修改：设置固定宽度并居中 */
+            width: 120px;  
+            text-align: center;
+            
             background-color: var(--badge-bg);
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
-            padding: 4px 12px;
+            padding: 4px 0; /* 上下内边距，左右由width控制 */
             border-radius: 6px;
-            white-space: nowrap;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            
+            /* 稍微增强阴影，更有立体感 */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            
             z-index: 10;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.5px;
+            white-space: nowrap; /* 防止文字换行 */
         }
 
         .pub-img-wrapper {
@@ -340,7 +348,7 @@
 
         /* --- Service List Fix --- */
         .service-list {
-            list-style: none; /* 去掉默认黑点 */
+            list-style: none; /* 关键：去掉默认黑点 */
             padding: 0;
             margin: 0;
         }
@@ -356,8 +364,8 @@
             position: absolute;
             left: 0;
             font-weight: bold;
-            font-size: 1.1rem;
-            line-height: 1.5rem;
+            font-size: 1.1rem; /* 稍微大一点点 */
+            line-height: 1.5rem; /* 对齐文字 */
         }
         .service-list strong {
             color: var(--dark-text);
@@ -577,6 +585,7 @@
         <!-- Preprint 1: Eagle -->
         <div class="pub-item">
             <div class="pub-figure">
+                <!-- 这里的Badge颜色用了深灰色，以示区分 -->
                 <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
                 <div class="pub-img-wrapper">
                     <img src="imgs/EAGLE_framework.png" alt="Eagle Paper">
@@ -588,7 +597,7 @@
                     <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                 </div>
                 <div class="pub-venue">
-                    arXiv Preprint <span class="tag-preprint">(Preprint)</span>, 2024
+                    arXiv Preprint, 2024 <span class="tag-preprint">(Preprint)</span>
                 </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2408.11397">PDF</a>
@@ -634,7 +643,7 @@
         <h2>Academic Service</h2>
         <ul class="service-list">
             <li><strong>Conference Reviewer:</strong> NeurIPS 2025, AAAI 2026, ICLR 2026</li>
-            <li><strong>Journal Reviewer:</strong> SCIS, TCSVT, Neural Networks, KBS</li>
+            <li><strong>Journal Reviewer:</strong> TCSVT, KBS, SCIS, Neural Networks</li>
             <li><strong>Teaching Assistant:</strong> CS2209 (Applied Logic), DS3000 (Machine Learning)</li>
         </ul>
     </section>
