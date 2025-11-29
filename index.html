@@ -15,29 +15,32 @@
     
     <style>
         :root {
-            /* 🎨 配色：学术亮蓝 */
-            --primary-color: #1565c0; 
+            /* 1. 链接/装饰用的亮蓝色 (保持不变) */
+            --link-blue: #3b82f6; 
             
+            /* 2. 导航栏和Badge用的深蓝色 (与导航一致) */
+            --nav-badge-blue: #1565c0;
+
             --dark-text: #1f2937;
             --medium-text: #4b5563;
             --light-text: #9ca3af;
             --bg-color: #f9fafb;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            --badge-bg: #1565c0; 
             --nav-text: #1f2937;
         }
 
         /* 🌙 暗色模式 */
         [data-theme="dark"] {
-            --primary-color: #60a5fa; 
+            --link-blue: #60a5fa; 
+            --nav-badge-blue: #3b82f6; /* 暗模式下深蓝看不清，稍微提亮 */
+            
             --dark-text: #f3f4f6;
             --medium-text: #d1d5db;
             --light-text: #9ca3af;
             --bg-color: #111827;
             --card-bg: #1f2937;
             --border-color: #374151;
-            --badge-bg: #3b82f6;
             --nav-text: #f3f4f6;
         }
 
@@ -61,8 +64,9 @@
             transition: background-color 0.3s, box-shadow 0.3s;
         }
 
+        /* 通用链接颜色：使用亮蓝色 */
         a {
-            color: var(--primary-color);
+            color: var(--link-blue);
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -137,7 +141,8 @@
             display: block;
             width: 6px;
             height: 24px;
-            background-color: var(--primary-color);
+            /* 装饰条保持亮蓝色，增加活力 */
+            background-color: var(--link-blue);
             border-radius: 3px;
         }
 
@@ -163,11 +168,11 @@
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 160px; /* 图片宽度 */
+            width: 160px;
             margin-top: 10px;
         }
 
-        /* Badge: 宽度100% (即160px), 居中, 悬浮 */
+        /* Badge: 使用深蓝色 (--nav-badge-blue) */
         .pub-badge {
             position: absolute;
             top: -6px; 
@@ -175,7 +180,10 @@
             width: 100%;
             transform: translateY(-50%);
             text-align: center;
-            background-color: var(--badge-bg);
+            
+            /* 这里应用深蓝色 */
+            background-color: var(--nav-badge-blue);
+            
             color: white;
             font-size: 0.75rem;
             font-weight: 700;
@@ -189,7 +197,7 @@
         }
 
         .pub-img-wrapper {
-            margin-top: 15px; /* 顶部留白给Badge */
+            margin-top: 15px;
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid var(--border-color);
@@ -211,7 +219,6 @@
 
         .pub-content { flex: 1; }
 
-        /* 纯文本标题 */
         .pub-title {
             font-size: 1.15rem;
             font-weight: 700;
@@ -225,7 +232,7 @@
         
         .me {
             color: var(--dark-text);
-            font-weight: 700; /* 仅加粗 */
+            font-weight: 700;
             text-decoration: none;
         }
 
@@ -240,6 +247,7 @@
         .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
+        /* Buttons: 保持亮蓝色 */
         .pub-links a {
             display: inline-block;
             font-size: 0.8rem;
@@ -253,9 +261,9 @@
             transition: all 0.2s;
         }
         .pub-links a:hover {
-            background-color: var(--primary-color);
+            background-color: var(--link-blue);
             color: white;
-            border-color: var(--primary-color);
+            border-color: var(--link-blue);
             text-decoration: none;
         }
 
@@ -312,7 +320,7 @@
         .intern-role {
             font-size: 1rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--link-blue);
             margin-bottom: 8px;
         }
 
@@ -333,13 +341,13 @@
             background-color: var(--bg-color);
             padding: 10px 12px;
             border-radius: 6px;
-            border-left: 3px solid var(--primary-color);
+            border-left: 3px solid var(--link-blue);
         }
 
         /* --- Service List --- */
         .service-list { list-style: none; padding: 0; margin: 0; }
         .service-list li { margin-bottom: 10px; padding-left: 20px; position: relative; color: var(--medium-text); }
-        .service-list li::before { content: "•"; color: var(--primary-color); position: absolute; left: 0; font-weight: bold; font-size: 1.1rem; line-height: 1.5rem; }
+        .service-list li::before { content: "•"; color: var(--link-blue); position: absolute; left: 0; font-weight: bold; font-size: 1.1rem; line-height: 1.5rem; }
         .service-list strong { color: var(--dark-text); }
 
         /* --- Navigation Bar --- */
@@ -364,9 +372,9 @@
             transition: color 0.3s;
         }
 
-        /* Active 和 Hover 变色 */
-        .nav-links a.active { color: var(--primary-color); font-weight: 600; }
-        .nav-links a:hover { color: var(--primary-color); }
+        /* Active 和 Hover 使用深蓝色 */
+        .nav-links a.active { color: var(--nav-badge-blue); font-weight: 600; }
+        .nav-links a:hover { color: var(--nav-badge-blue); }
 
         .nav-icon {
             cursor: pointer;
@@ -375,7 +383,7 @@
             margin-left: 10px;
             transition: color 0.3s;
         }
-        .nav-icon:hover { color: var(--primary-color); }
+        .nav-icon:hover { color: var(--nav-badge-blue); }
         
         @media (max-width: 768px) {
             .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
@@ -399,7 +407,6 @@
         <a href="index.html" class="active">Home</a>
         <a href="publications.html">Publications</a>
         <i class="fas fa-search nav-icon" onclick="goToSearch()"></i>
-        <!-- 使用 'far' 样式，显示细线条图标 -->
         <i class="far fa-sun nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
     </div>
 </nav>
@@ -629,13 +636,11 @@
         const savedTheme = localStorage.getItem('theme');
         const icon = document.getElementById('theme-toggle');
         
-        // 确保初始化时使用正确的图标
         if (savedTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
             icon.classList.remove('fa-sun');
             icon.classList.add('fa-moon');
         } else {
-            // 亮色模式（默认）
             icon.classList.remove('fa-moon');
             icon.classList.add('fa-sun');
         }
