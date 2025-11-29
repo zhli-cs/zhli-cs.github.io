@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Zhihao Li</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2b5493; /* 深海蓝 */
+            --dark-text: #1f2937;
+            --medium-text: #4b5563;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+            --badge-bg: #2b5493;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            margin: 0;
+            background-color: var(--bg-color);
+        }
+
+        /* 导航栏样式 (与首页保持一致) */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* 两端对齐：左边名字，右边菜单 */
+            align-items: center;
+            padding: 20px 40px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: #111; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
+        .nav-links a { color: var(--dark-text); font-weight: 500; text-decoration: none; position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+        .nav-icon { cursor: pointer; margin-left: 10px; }
+
+        /* 页面主体 */
+        .main-content {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 30px; }
+
+        /* 搜索框 */
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 40px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* 年份标题 */
+        .year-header {
+            font-size: 2rem;
+            color: #e5e7eb; /* 极淡的灰色，类似截图 */
+            font-weight: 700;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        /* 论文列表项 (复刻截图风格) */
+        .pub-entry {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .pub-img-box {
+            position: relative;
+            width: 160px;
+            flex-shrink: 0;
+        }
+
+        .pub-badge {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--badge-bg);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .pub-img {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .pub-entry:hover .pub-img { transform: scale(1.02); }
+
+        .pub-details { flex: 1; }
+        
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 8px;
+            display: block;
+            text-decoration: none;
+        }
+        .pub-title:hover { color: var(--primary-color); }
+
+        .pub-authors { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
+        .me { font-weight: 600; text-decoration: underline; }
+
+        .pub-venue {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* 方框按钮样式 (截图同款) */
+        .btn-group { display: flex; gap: 10px; }
+        .btn {
+            display: inline-block;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #333;
+            border: 1px solid #333; /* 黑边框 */
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        .btn:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* 移动端 */
+        @media (max-width: 768px) {
+            .pub-entry { flex-direction: column; }
+            .year-header { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-brand">Zhihao Li</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="publications.html" class="active">Publications</a>
+            <a href="index.html">Profile</a>
+            <i class="fas fa-search nav-icon"></i>
+            <i class="fas fa-moon nav-icon" onclick="alert('Dark mode toggle coming soon!')"></i>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1>Publications</h1>
+        
+        <!-- 搜索/筛选框 -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Type to filter..." onkeyup="filterPubs()">
+
+        <!-- 2025年 -->
+        <div class="year-block">
+            <div class="year-header">2025</div>
+
+            <!-- Paper 1 -->
+            <div class="pub-entry">
+                <div class="pub-img-box">
+                    <div class="pub-badge">NeurIPS 2025</div>
+                    <img src="VTG_framework.png" class="pub-img" alt="Paper Image">
+                </div>
+                <div class="pub-details">
+                    <a href="#" class="pub-title">Versatile Transferable Unlearnable Example Generator</a>
+                    <div class="pub-authors">
+                        <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, ... Boyu Wang
+                    </div>
+                    <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
+                    <div class="btn-group">
+                        <a href="#" class="btn">PDF</a>
+                        <a href="#" class="btn">Code</a>
+                        <a href="#" class="btn">Bib</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="pub-entry">
+                <div class="pub-img-box">
+                    <div class="pub-badge">IEEE TMM</div>
+                    <img src="VSCN_framework.png" class="pub-img" alt="Paper Image">
+                </div>
+                <div class="pub-details">
+                    <a href="#" class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</a>
+                    <div class="pub-authors">
+                        Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, ... Xuelong Li
+                    </div>
+                    <div class="pub-venue">IEEE Transactions on Multimedia (TMM), 2025</div>
+                    <div class="btn-group">
+                        <a href="#" class="btn">PDF</a>
+                        <a href="#" class="btn">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 2024年 -->
+        <div class="year-block">
+            <div class="year-header">2024</div>
+            
+            <!-- Paper 3 -->
+            <div class="pub-entry">
+                <div class="pub-img-box">
+                    <div class="pub-badge">Neural Networks</div>
+                    <img src="HMRN_framework.png" class="pub-img" alt="Paper Image">
+                </div>
+                <div class="pub-details">
+                    <a href="#" class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</a>
+                    <div class="pub-authors">
+                        Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, ... Xuelong Li
+                    </div>
+                    <div class="pub-venue">Neural Networks, 2024</div>
+                    <div class="btn-group">
+                        <a href="#" class="btn">PDF</a>
+                        <a href="#" class="btn">Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // 简单的筛选脚本
+        function filterPubs() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var entries = document.getElementsByClassName('pub-entry');
+
+            for (var i = 0; i < entries.length; i++) {
+                var text = entries[i].textContent || entries[i].innerText;
+                if (text.toUpperCase().indexOf(filter) > -1) {
+                    entries[i].style.display = "";
+                } else {
+                    entries[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
