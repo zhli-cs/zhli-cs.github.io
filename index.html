@@ -146,16 +146,17 @@
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 200px;
-            margin-top: 15px;
+            width: 160px; /* 保持缩小的宽度 */
+            margin-top: 10px;
         }
 
         /* Floating Badge Style */
         .pub-badge {
             position: absolute;
-            top: -12px;
+            /* 关键修改：向上提 6px */
+            top: -6px; 
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(-50%);
             background-color: var(--badge-bg);
             color: white;
             font-size: 0.75rem;
@@ -170,6 +171,7 @@
         }
 
         .pub-img-wrapper {
+            margin-top: 15px; /* 保持顶部空间，防止重叠 */
             border-radius: 6px;
             overflow: hidden;
             border: 1px solid #eee;
