@@ -10,14 +10,14 @@
     <style>
         :root {
             /* ☀️ 亮色模式 */
-            --primary-color: #3b82f6;
+            --primary-color: #1565c0; /* 学术亮蓝 */
             --dark-text: #1f2937;
             --medium-text: #4b5563;
             --light-text: #9ca3af;
             --bg-color: #f9fafb;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            --badge-bg: #2b5493;
+            --badge-bg: #1565c0;
             --nav-text: #1f2937;
         }
 
@@ -53,19 +53,19 @@
             margin: 0 auto;
         }
         
-        /* 名字链接样式 */
+        /* 名字作为返回主页的链接 */
         .nav-brand { 
             font-weight: 700; 
             font-size: 1.2rem; 
             color: var(--dark-text); 
-            text-decoration: none; /* 去掉下划线 */
+            text-decoration: none; 
             transition: color 0.2s;
         }
         .nav-brand:hover { color: var(--primary-color); }
 
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { color: var(--nav-text); font-weight: 500; text-decoration: none; position: relative; transition: color 0.3s;}
-        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary-color); font-weight: 600; }
         .nav-icon { cursor: pointer; margin-left: 10px; color: var(--nav-text); transition: color 0.3s;}
         .nav-icon:hover { color: var(--primary-color); }
 
@@ -84,21 +84,20 @@
             border-radius: 6px;
             margin-bottom: 40px;
             font-family: 'Inter', sans-serif;
-            box-sizing: border-box;
+            box-sizing: border-box; 
         }
 
         /* Year Header */
         .year-header {
             font-size: 2rem;
-            /* 调整透明度：之前是 #e5e7eb (太淡)，现在改深一点，减少透明感 */
-            color: #d1d5db; 
+            color: #d1d5db; /* 稍深的灰色，减小透明度 */
             font-weight: 700;
             text-align: right;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 20px;
             line-height: 1;
         }
-        [data-theme="dark"] .year-header { color: #4b5563; } /* 暗模式下也稍微深一点 */
+        [data-theme="dark"] .year-header { color: #4b5563; }
 
         /* Pub Entry */
         .pub-entry { display: flex; gap: 25px; margin-bottom: 40px; }
@@ -110,15 +109,13 @@
             margin-top: 10px; 
         }
 
-        /* Badge 样式调整：宽度100%与图片一致 */
+        /* Badge 样式 (Width 100%) */
         .pub-badge { 
             position: absolute; 
             top: -6px; 
-            
-            /* 修改：左对齐，宽度100% */
             left: 0; 
-            width: 100%;
-            transform: translateY(-50%); /* 只保留Y轴居中，X轴由width控制 */
+            width: 100%; /* 与图片等宽 */
+            transform: translateY(-50%); 
             
             text-align: center;
             background-color: var(--badge-bg); 
@@ -144,27 +141,35 @@
         .pub-entry:hover .pub-img { transform: scale(1.02); }
         
         .pub-details { flex: 1; }
-        .pub-title { font-size: 1.1rem; font-weight: 700; color: var(--dark-text); margin-bottom: 8px; display: block; text-decoration: none; }
-        .pub-title:hover { color: var(--primary-color); }
+        
+        /* 纯文本标题 */
+        .pub-title { 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            color: var(--dark-text); 
+            margin-bottom: 8px; 
+            display: block; 
+            text-decoration: none; 
+        }
+        
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
         .me { font-weight: 600; text-decoration: underline; color: var(--dark-text); }
         .pub-venue { font-style: italic; color: var(--medium-text); margin-bottom: 12px; font-size: 0.9rem; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        /* Buttons 样式统一 (与 index.html 保持一致) */
+        /* Buttons */
         .btn-group { display: flex; gap: 10px; }
         .btn {
             display: inline-block; 
-            padding: 3px 12px; /* 调整Padding */
-            font-size: 0.8rem; /* 字体改大一点，0.75 -> 0.8 */
+            padding: 3px 12px; 
+            font-size: 0.8rem; 
             font-weight: 600;
-            color: var(--medium-text); /* 颜色改灰 */
-            border: 1px solid var(--border-color); /* 边框变细变淡 */
-            border-radius: 4px; /* 圆角 3px -> 4px */
+            color: var(--medium-text); 
+            border: 1px solid var(--border-color); 
+            border-radius: 4px; 
             background-color: var(--card-bg);
             text-decoration: none; 
             transition: all 0.2s; 
-            /* 去掉了 text-transform: uppercase; */
         }
         .btn:hover { 
             background-color: var(--primary-color); 
@@ -182,14 +187,13 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <!-- 修改：将 div 改为 a 标签，点击返回首页 -->
         <a href="index.html" class="nav-brand">Zhihao Li</a>
-        
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="publications.html" class="active">Publications</a>
             <i class="fas fa-search nav-icon" onclick="focusSearch()"></i>
-            <i class="fas fa-moon nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
+            <!-- 使用 far 样式图标 -->
+            <i class="far fa-sun nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
         </div>
     </nav>
 
@@ -209,7 +213,7 @@
                     <img src="imgs/VTG_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
-                    <a href="#" class="pub-title">Versatile Transferable Unlearnable Example Generator</a>
+                    <span class="pub-title">Versatile Transferable Unlearnable Example Generator</span>
                     <div class="pub-authors">
                         <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, Hao Zheng, Qiuyue Li, Fan Zhou, Shichun Yang, Charles Ling, Boyu Wang
                     </div>
@@ -227,7 +231,7 @@
                     <img src="imgs/VSCN_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
-                    <a href="#" class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</a>
+                    <span class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</span>
                     <div class="pub-authors">
                         Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, Yanwei Pang, Xuelong Li
                     </div>
@@ -251,7 +255,7 @@
                     <img src="imgs/HMRN_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
-                    <a href="#" class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</a>
+                    <span class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</span>
                     <div class="pub-authors">
                         Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li
                     </div>
@@ -270,13 +274,13 @@
                     <img src="imgs/EAGLE_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
-                    <a href="#" class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</a>
+                    <span class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</span>
                     <div class="pub-authors">
                         <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                     </div>
                     <div class="pub-venue">arXiv Preprint, 2024</div>
                     <div class="btn-group">
-                        <a href="https://arxiv.org/abs/2408.11397" class="btn">PDF</a>
+                        <a href="https://arxiv.org/abs/2408.11397" class="btn">Paper</a>
                     </div>
                 </div>
             </div>
@@ -311,13 +315,13 @@
             
             if (isDark) {
                 body.removeAttribute('data-theme');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -328,6 +332,9 @@
             
             if (savedTheme === 'dark') {
                 document.body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             }
