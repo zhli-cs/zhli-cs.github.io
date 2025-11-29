@@ -10,7 +10,7 @@
     <style>
         :root {
             /* ☀️ 亮色模式 */
-            --primary-color: #2b5493; /* 深海蓝 */
+            --primary-color: #3b82f6;
             --dark-text: #1f2937;
             --medium-text: #4b5563;
             --light-text: #9ca3af;
@@ -52,7 +52,17 @@
             max-width: 960px;
             margin: 0 auto;
         }
-        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--dark-text); }
+        
+        /* 名字链接样式 */
+        .nav-brand { 
+            font-weight: 700; 
+            font-size: 1.2rem; 
+            color: var(--dark-text); 
+            text-decoration: none; /* 去掉下划线 */
+            transition: color 0.2s;
+        }
+        .nav-brand:hover { color: var(--primary-color); }
+
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { color: var(--nav-text); font-weight: 500; text-decoration: none; position: relative; transition: color 0.3s;}
         .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
@@ -74,20 +84,21 @@
             border-radius: 6px;
             margin-bottom: 40px;
             font-family: 'Inter', sans-serif;
-            box-sizing: border-box; /* 防止padding撑破宽度 */
+            box-sizing: border-box;
         }
 
         /* Year Header */
         .year-header {
             font-size: 2rem;
-            color: #e5e7eb;
+            /* 调整透明度：之前是 #e5e7eb (太淡)，现在改深一点，减少透明感 */
+            color: #d1d5db; 
             font-weight: 700;
             text-align: right;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 20px;
             line-height: 1;
         }
-        [data-theme="dark"] .year-header { color: #374151; }
+        [data-theme="dark"] .year-header { color: #4b5563; } /* 暗模式下也稍微深一点 */
 
         /* Pub Entry */
         .pub-entry { display: flex; gap: 25px; margin-bottom: 40px; }
@@ -96,20 +107,20 @@
             position: relative; 
             width: 160px; 
             flex-shrink: 0; 
-            /* 这里的margin-top是为了给Badge预留一点上方空间，防止Badge切顶 */
             margin-top: 10px; 
         }
 
-        /* Badge 样式 (与首页统一：固定宽度、居中、悬浮不遮挡) */
+        /* Badge 样式调整：宽度100%与图片一致 */
         .pub-badge { 
             position: absolute; 
-            top: -6px; /* 向上提，悬浮 */
-            left: 50%; 
-            transform: translateX(-50%) translateY(-50%); 
+            top: -6px; 
             
-            width: 120px; /* 固定宽度 */
+            /* 修改：左对齐，宽度100% */
+            left: 0; 
+            width: 100%;
+            transform: translateY(-50%); /* 只保留Y轴居中，X轴由width控制 */
+            
             text-align: center;
-            
             background-color: var(--badge-bg); 
             color: white; 
             font-size: 0.7rem; 
@@ -123,9 +134,7 @@
 
         .pub-img { 
             width: 100%; 
-            /* 关键：给图片增加顶部间距，让Badge完全悬浮在图片上方，而不遮挡图片内容 */
             margin-top: 15px; 
-            
             border: 1px solid var(--border-color); 
             border-radius: 4px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
@@ -142,14 +151,26 @@
         .pub-venue { font-style: italic; color: var(--medium-text); margin-bottom: 12px; font-size: 0.9rem; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        /* Buttons */
+        /* Buttons 样式统一 (与 index.html 保持一致) */
         .btn-group { display: flex; gap: 10px; }
         .btn {
-            display: inline-block; padding: 4px 12px; font-size: 0.75rem; font-weight: 600;
-            color: var(--dark-text); border: 1px solid var(--dark-text); border-radius: 3px;
-            text-decoration: none; transition: all 0.2s; text-transform: uppercase;
+            display: inline-block; 
+            padding: 3px 12px; /* 调整Padding */
+            font-size: 0.8rem; /* 字体改大一点，0.75 -> 0.8 */
+            font-weight: 600;
+            color: var(--medium-text); /* 颜色改灰 */
+            border: 1px solid var(--border-color); /* 边框变细变淡 */
+            border-radius: 4px; /* 圆角 3px -> 4px */
+            background-color: var(--card-bg);
+            text-decoration: none; 
+            transition: all 0.2s; 
+            /* 去掉了 text-transform: uppercase; */
         }
-        .btn:hover { background-color: var(--dark-text); color: var(--bg-color); }
+        .btn:hover { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border-color: var(--primary-color); 
+        }
 
         @media (max-width: 768px) {
             .pub-entry { flex-direction: column; }
@@ -161,7 +182,9 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-brand">Zhihao Li | 李志豪</div>
+        <!-- 修改：将 div 改为 a 标签，点击返回首页 -->
+        <a href="index.html" class="nav-brand">Zhihao Li</a>
+        
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="publications.html" class="active">Publications</a>
@@ -240,7 +263,7 @@
                 </div>
             </div>
 
-            <!-- Eagle Preprint (归类在2024，因为是2024年的Preprint) -->
+            <!-- Eagle Preprint -->
             <div class="pub-entry">
                 <div class="pub-img-box">
                     <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
@@ -262,7 +285,6 @@
     </div>
 
     <script>
-        // 搜索过滤逻辑
         function filterPubs() {
             var input = document.getElementById('searchInput');
             var filter = input.value.toUpperCase();
@@ -278,12 +300,10 @@
             }
         }
 
-        // 聚焦搜索框
         function focusSearch() {
             document.getElementById('searchInput').focus();
         }
 
-        // 暗色模式逻辑
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById('theme-toggle');
@@ -302,18 +322,16 @@
             }
         }
 
-        // 初始化
         window.onload = function() {
-            // 恢复主题
             const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('theme-toggle');
+            
             if (savedTheme === 'dark') {
                 document.body.setAttribute('data-theme', 'dark');
-                const icon = document.getElementById('theme-toggle');
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             }
 
-            // 检查是否需要自动聚焦搜索框 (从首页跳转过来时)
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('focus') === 'true') {
                 document.getElementById('searchInput').focus();
