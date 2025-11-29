@@ -15,7 +15,7 @@
     
     <style>
         :root {
-            /* 🎨 全局配色 */
+            /* ☀️ 亮色模式 (默认) */
             --primary-color: #3b82f6; /* 亮天蓝色 */
             --dark-text: #1f2937;
             --medium-text: #4b5563;
@@ -23,7 +23,23 @@
             --bg-color: #f9fafb;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
-            --badge-bg: #2b5493; /* 标签深蓝色 */
+            
+            /* ✨ Badge颜色：深海蓝 */
+            --badge-bg: #2b5493; 
+            --nav-text: #1f2937;
+        }
+
+        /* 🌙 暗色模式 (Dark Mode) */
+        [data-theme="dark"] {
+            --primary-color: #60a5fa; /* 暗模式下蓝色稍微亮一点 */
+            --dark-text: #f3f4f6;     /* 接近白色 */
+            --medium-text: #d1d5db;   /* 浅灰 */
+            --light-text: #9ca3af;
+            --bg-color: #111827;      /* 深黑蓝背景 */
+            --card-bg: #1f2937;       /* 卡片深灰背景 */
+            --border-color: #374151;
+            --badge-bg: #3b82f6;      /* 暗模式下Badge稍微亮一点 */
+            --nav-text: #f3f4f6;
         }
 
         body {
@@ -33,6 +49,7 @@
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .container {
@@ -42,6 +59,7 @@
             background-color: var(--card-bg);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             border-radius: 12px;
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         a {
@@ -53,6 +71,7 @@
             color: #1d4ed8;
             text-decoration: underline;
         }
+        [data-theme="dark"] a:hover { color: #93c5fd; }
 
         /* --- Header --- */
         header {
@@ -70,7 +89,7 @@
             font-size: 2.8rem;
             margin: 0 0 10px 0;
             font-weight: 700;
-            color: #111;
+            color: var(--dark-text);
             letter-spacing: -0.02em;
         }
 
@@ -109,7 +128,7 @@
             font-weight: 700;
             margin-top: 50px;
             margin-bottom: 25px;
-            color: #111;
+            color: var(--dark-text);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -138,7 +157,7 @@
             display: flex;
             gap: 25px;
             padding: 30px 0;
-            border-bottom: 1px solid #f3f4f6;
+            border-bottom: 1px solid var(--border-color);
         }
         .pub-item:last-child { border-bottom: none; }
 
@@ -146,15 +165,14 @@
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 160px; /* 保持缩小的宽度 */
+            width: 160px; /* 宽度保持缩小 */
             margin-top: 10px;
         }
 
         /* Floating Badge Style */
         .pub-badge {
             position: absolute;
-            /* 关键修改：向上提 6px */
-            top: -6px; 
+            top: -6px; /* 向上提 6px */
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
             background-color: var(--badge-bg);
@@ -171,11 +189,11 @@
         }
 
         .pub-img-wrapper {
-            margin-top: 15px; /* 保持顶部空间，防止重叠 */
+            margin-top: 15px; /* 保持顶部空间 */
             border-radius: 6px;
             overflow: hidden;
-            border: 1px solid #eee;
-            background-color: #f3f4f6;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -197,7 +215,7 @@
         .pub-title {
             font-size: 1.15rem;
             font-weight: 700;
-            color: #111;
+            color: var(--dark-text);
             display: block;
             margin-bottom: 8px;
             line-height: 1.4;
@@ -206,7 +224,7 @@
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
         
         .me {
-            color: #111;
+            color: var(--dark-text);
             font-weight: 600;
             text-decoration: underline;
             text-decoration-color: var(--primary-color);
@@ -230,10 +248,10 @@
             font-weight: 600;
             margin-right: 10px;
             padding: 3px 12px;
-            border: 1px solid #d1d5db;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
-            color: #4b5563;
-            background-color: #fff;
+            color: var(--medium-text);
+            background-color: var(--card-bg);
             transition: all 0.2s;
         }
         .pub-links a:hover {
@@ -248,8 +266,8 @@
             display: flex;
             gap: 20px;
             padding: 20px;
-            background-color: #fff;
-            border: 1px solid #eee;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -265,7 +283,7 @@
             height: 60px;
             border-radius: 8px;
             overflow: hidden;
-            border: 1px solid #f3f4f6;
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -290,7 +308,7 @@
         .intern-company {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #111;
+            color: var(--dark-text);
         }
 
         .intern-role {
@@ -314,7 +332,7 @@
             font-size: 0.95rem;
             color: var(--medium-text);
             line-height: 1.5;
-            background-color: #f9fafb;
+            background-color: var(--bg-color);
             padding: 10px 12px;
             border-radius: 6px;
             border-left: 3px solid var(--primary-color);
@@ -322,7 +340,7 @@
 
         /* --- Service List Fix --- */
         .service-list {
-            list-style: none; /* 关键：去掉默认黑点 */
+            list-style: none; /* 去掉默认黑点 */
             padding: 0;
             margin: 0;
         }
@@ -330,6 +348,7 @@
             margin-bottom: 10px;
             padding-left: 20px; /* 给自定义圆点留位置 */
             position: relative;
+            color: var(--medium-text);
         }
         .service-list li::before {
             content: "•"; /* 自定义蓝点 */
@@ -337,20 +356,14 @@
             position: absolute;
             left: 0;
             font-weight: bold;
-            font-size: 1.1rem; /* 稍微大一点点 */
-            line-height: 1.5rem; /* 对齐文字 */
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+        }
+        .service-list strong {
+            color: var(--dark-text);
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
-            header { flex-direction: column-reverse; text-align: center; gap: 20px;}
-            .pub-item { flex-direction: column; }
-            .pub-figure { width: 100%; max-width: 300px; margin-bottom: 10px; margin-top: 25px;}
-            .intern-header { flex-direction: column; }
-        }
-
-/* --- Navigation Bar --- */
+        /* --- Navigation Bar --- */
         .navbar {
             display: flex;
             justify-content: flex-end; /* 靠右对齐 */
@@ -368,18 +381,19 @@
         }
 
         .nav-links a {
-            color: var(--dark-text);
+            color: var(--nav-text);
             font-weight: 500;
             font-size: 1rem;
             text-decoration: none;
             position: relative;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover, .nav-links a.active {
             color: var(--primary-color);
         }
         
-        /* 简单的下划线动效 */
+        /* 下划线动效 */
         .nav-links a::after {
             content: '';
             display: block;
@@ -398,10 +412,23 @@
         .nav-icon {
             cursor: pointer;
             font-size: 1.1rem;
-            color: var(--dark-text);
+            color: var(--nav-text);
             margin-left: 10px;
+            transition: color 0.3s;
+        }
+        .nav-icon:hover {
+            color: var(--primary-color);
         }
         
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
+            header { flex-direction: column-reverse; text-align: center; gap: 20px;}
+            .pub-item { flex-direction: column; }
+            .pub-figure { width: 100%; max-width: 300px; margin-bottom: 10px; margin-top: 25px;}
+            .intern-header { flex-direction: column; }
+        }
+
         footer {
             margin-top: 80px; text-align: center; font-size: 0.85rem; color: var(--light-text);
             border-top: 1px solid var(--border-color); padding-top: 30px;
@@ -415,9 +442,9 @@
     <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="publications.html">Publications</a>
-        <a href="index.html">Profile</a>
-        <i class="fas fa-search nav-icon"></i>
-        <i class="fas fa-moon nav-icon" onclick="toggleTheme()"></i>
+        <!-- Profile 已移除 -->
+        <i class="fas fa-search nav-icon" onclick="goToSearch()"></i>
+        <i class="fas fa-moon nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
     </div>
 </nav>
     
@@ -474,7 +501,7 @@
     <!-- Publications -->
     <section id="publications">
         <h2>Selected Publications</h2>
-        <p style="font-size: 0.85rem; color: #666; margin-bottom: 25px; margin-top: -15px;">* Indicates Equal Contribution</p>
+        <p style="font-size: 0.85rem; color: var(--light-text); margin-bottom: 25px; margin-top: -15px;">* Indicates Equal Contribution</p>
 
         <!-- Paper 1: NeurIPS -->
         <div class="pub-item">
@@ -550,7 +577,6 @@
         <!-- Preprint 1: Eagle -->
         <div class="pub-item">
             <div class="pub-figure">
-                <!-- 这里的Badge颜色用了深灰色，以示区分 -->
                 <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
                 <div class="pub-img-wrapper">
                     <img src="imgs/EAGLE_framework.png" alt="Eagle Paper">
@@ -562,7 +588,7 @@
                     <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                 </div>
                 <div class="pub-venue">
-                    arXiv Preprint <span class="tag-preprint">(Preprint), 2024</span>
+                    arXiv Preprint <span class="tag-preprint">(Preprint)</span>, 2024
                 </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2408.11397">PDF</a>
@@ -583,7 +609,7 @@
             <div class="intern-content">
                 <div class="intern-header">
                     <span class="intern-company">Meituan</span>
-                    <span style="font-family: 'Inter', monospace; color: #6b7280; font-size: 0.9rem;">
+                    <span style="font-family: 'Inter', monospace; color: var(--light-text); font-size: 0.9rem;">
                         Apr. 2024 - Aug. 2024
                     </span>
                 </div>
@@ -608,7 +634,7 @@
         <h2>Academic Service</h2>
         <ul class="service-list">
             <li><strong>Conference Reviewer:</strong> NeurIPS 2025, AAAI 2026, ICLR 2026</li>
-            <li><strong>Journal Reviewer:</strong> TCSVT, KBS, SCIS, Neural Networks</li>
+            <li><strong>Journal Reviewer:</strong> SCIS, TCSVT, Neural Networks, KBS</li>
             <li><strong>Teaching Assistant:</strong> CS2209 (Applied Logic), DS3000 (Machine Learning)</li>
         </ul>
     </section>
@@ -618,6 +644,46 @@
     </footer>
 
 </div>
+
+<!-- 脚本：控制暗色模式和搜索跳转 -->
+<script>
+    // 1. 搜索跳转功能
+    function goToSearch() {
+        // 跳转到 publications 页面并聚焦搜索框
+        window.location.href = "publications.html?focus=true";
+    }
+
+    // 2. 暗色模式逻辑
+    function toggleTheme() {
+        const body = document.body;
+        const icon = document.getElementById('theme-toggle');
+        const isDark = body.getAttribute('data-theme') === 'dark';
+        
+        if (isDark) {
+            body.removeAttribute('data-theme');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+    }
+
+    // 页面加载时应用保存的主题
+    window.onload = function() {
+        const savedTheme = localStorage.getItem('theme');
+        const icon = document.getElementById('theme-toggle');
+        
+        if (savedTheme === 'dark') {
+            document.body.setAttribute('data-theme', 'dark');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+    };
+</script>
 
 </body>
 </html>
