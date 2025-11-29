@@ -10,10 +10,8 @@
     <style>
         :root {
             /* ☀️ 亮色模式 */
-            --link-blue: #1565c0; 
-            
-            /* Badge和导航的深蓝色 */
-            --nav-badge-blue: #1565c0;
+            --link-blue: #3b82f6; 
+            --nav-badge-blue: #1565c0; /* 学术亮蓝 */
 
             --dark-text: #1f2937;
             --medium-text: #4b5563;
@@ -22,12 +20,15 @@
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
             --nav-text: #1f2937;
+            
+            --badge-bg: #1565c0;
         }
 
         /* 🌙 暗色模式 */
         [data-theme="dark"] {
-            --link-blue: #1d4ed8;
-            --nav-badge-blue: #1d4ed8;
+            --link-blue: #60a5fa;
+            --nav-badge-blue: #1d4ed8; /* 深邃蓝 */
+            --badge-bg: #1d4ed8;
 
             --dark-text: #f3f4f6;
             --medium-text: #d1d5db;
@@ -69,7 +70,7 @@
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { color: var(--nav-text); font-weight: 500; text-decoration: none; position: relative; transition: color 0.3s;}
         
-        /* 选中态：深蓝色 */
+        /* 选中态 */
         .nav-links a.active { color: var(--nav-badge-blue); font-weight: 600; }
         .nav-links a:hover { color: var(--nav-badge-blue); }
         
@@ -107,26 +108,25 @@
         [data-theme="dark"] .year-header { color: #4b5563; }
 
         /* Pub Entry */
-        .pub-entry { display: flex; gap: 25px; margin-bottom: 40px; }
+        .pub-entry { display: flex; gap: 25px; margin-bottom: 40px; align-items: flex-start; }
         
         .pub-img-box { 
             position: relative; 
             width: 160px; 
             flex-shrink: 0; 
-            margin-top: 10px; 
+            margin-top: 0; 
         }
 
-        /* Badge: 深蓝色 */
+        /* Badge 样式 */
         .pub-badge { 
             position: absolute; 
-            top: -6px; 
+            /* ✨ 关键修改：下调 2px 以对齐右侧文字 */
+            top: 2px; 
             left: 0; 
-            width: 100%;
-            transform: translateY(-50%); 
+            width: 100%; 
+            transform: none; 
             text-align: center;
-            
-            background-color: var(--nav-badge-blue);
-            
+            background-color: var(--badge-bg); 
             color: white; 
             font-size: 0.7rem; 
             font-weight: 700; 
@@ -139,7 +139,7 @@
 
         .pub-img { 
             width: 100%; 
-            margin-top: 15px; 
+            margin-top: 34px; /* 增加顶部间距 */
             border: 1px solid var(--border-color); 
             border-radius: 4px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
@@ -157,6 +157,7 @@
             margin-bottom: 8px; 
             display: block; 
             text-decoration: none; 
+            margin-top: 0;
         }
         
         .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
@@ -164,7 +165,7 @@
         .pub-venue { font-style: italic; color: var(--medium-text); margin-bottom: 12px; font-size: 0.9rem; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        /* Buttons: 亮蓝色 */
+        /* Buttons */
         .btn-group { display: flex; gap: 10px; }
         .btn {
             display: inline-block; 
