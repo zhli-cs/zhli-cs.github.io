@@ -9,13 +9,29 @@
     
     <style>
         :root {
+            /* ☀️ 亮色模式 */
             --primary-color: #2b5493; /* 深海蓝 */
             --dark-text: #1f2937;
             --medium-text: #4b5563;
+            --light-text: #9ca3af;
             --bg-color: #f9fafb;
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
             --badge-bg: #2b5493;
+            --nav-text: #1f2937;
+        }
+
+        /* 🌙 暗色模式 */
+        [data-theme="dark"] {
+            --primary-color: #60a5fa;
+            --dark-text: #f3f4f6;
+            --medium-text: #d1d5db;
+            --light-text: #9ca3af;
+            --bg-color: #111827;
+            --card-bg: #1f2937;
+            --border-color: #374151;
+            --badge-bg: #3b82f6;
+            --nav-text: #f3f4f6;
         }
 
         body {
@@ -24,133 +40,117 @@
             line-height: 1.6;
             margin: 0;
             background-color: var(--bg-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* 导航栏样式 (与首页保持一致) */
+        /* Navbar */
         .navbar {
             display: flex;
-            justify-content: space-between; /* 两端对齐：左边名字，右边菜单 */
+            justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
             max-width: 960px;
             margin: 0 auto;
         }
-        .nav-brand { font-weight: 700; font-size: 1.2rem; color: #111; }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: var(--dark-text); }
         .nav-links { display: flex; gap: 25px; align-items: center; }
-        .nav-links a { color: var(--dark-text); font-weight: 500; text-decoration: none; position: relative; }
+        .nav-links a { color: var(--nav-text); font-weight: 500; text-decoration: none; position: relative; transition: color 0.3s;}
         .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
-        .nav-icon { cursor: pointer; margin-left: 10px; }
+        .nav-icon { cursor: pointer; margin-left: 10px; color: var(--nav-text); transition: color 0.3s;}
+        .nav-icon:hover { color: var(--primary-color); }
 
-        /* 页面主体 */
-        .main-content {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 0 40px;
-        }
+        /* Main Content */
+        .main-content { max-width: 960px; margin: 40px auto; padding: 0 40px; }
+        h1 { font-size: 2.5rem; margin-bottom: 30px; color: var(--dark-text); }
 
-        h1 { font-size: 2.5rem; margin-bottom: 30px; }
-
-        /* 搜索框 */
+        /* Search Box */
         .search-box {
             width: 100%;
             padding: 12px 15px;
             font-size: 1rem;
-            border: 1px solid #ccc;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--dark-text);
             border-radius: 6px;
             margin-bottom: 40px;
             font-family: 'Inter', sans-serif;
+            box-sizing: border-box; /* 防止padding撑破宽度 */
         }
 
-        /* 年份标题 */
+        /* Year Header */
         .year-header {
             font-size: 2rem;
-            color: #e5e7eb; /* 极淡的灰色，类似截图 */
+            color: #e5e7eb;
             font-weight: 700;
             text-align: right;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 20px;
             line-height: 1;
         }
+        [data-theme="dark"] .year-header { color: #374151; }
 
-        /* 论文列表项 (复刻截图风格) */
-        .pub-entry {
-            display: flex;
-            gap: 25px;
-            margin-bottom: 40px;
+        /* Pub Entry */
+        .pub-entry { display: flex; gap: 25px; margin-bottom: 40px; }
+        
+        .pub-img-box { 
+            position: relative; 
+            width: 160px; 
+            flex-shrink: 0; 
+            /* 这里的margin-top是为了给Badge预留一点上方空间，防止Badge切顶 */
+            margin-top: 10px; 
         }
 
-        .pub-img-box {
-            position: relative;
-            width: 160px;
-            flex-shrink: 0;
+        /* Badge 样式 (与首页统一：固定宽度、居中、悬浮不遮挡) */
+        .pub-badge { 
+            position: absolute; 
+            top: -6px; /* 向上提，悬浮 */
+            left: 50%; 
+            transform: translateX(-50%) translateY(-50%); 
+            
+            width: 120px; /* 固定宽度 */
+            text-align: center;
+            
+            background-color: var(--badge-bg); 
+            color: white; 
+            font-size: 0.7rem; 
+            font-weight: 700; 
+            padding: 4px 0; 
+            border-radius: 6px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+            z-index: 2; 
+            white-space: nowrap;
         }
 
-        .pub-badge {
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--badge-bg);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            z-index: 2;
-        }
-
-        .pub-img {
-            width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+        .pub-img { 
+            width: 100%; 
+            /* 关键：给图片增加顶部间距，让Badge完全悬浮在图片上方，而不遮挡图片内容 */
+            margin-top: 15px; 
+            
+            border: 1px solid var(--border-color); 
+            border-radius: 4px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            transition: transform 0.2s; 
+            background-color: var(--card-bg);
         }
         .pub-entry:hover .pub-img { transform: scale(1.02); }
-
-        .pub-details { flex: 1; }
         
-        .pub-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #000;
-            margin-bottom: 8px;
-            display: block;
-            text-decoration: none;
-        }
+        .pub-details { flex: 1; }
+        .pub-title { font-size: 1.1rem; font-weight: 700; color: var(--dark-text); margin-bottom: 8px; display: block; text-decoration: none; }
         .pub-title:hover { color: var(--primary-color); }
+        .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
+        .me { font-weight: 600; text-decoration: underline; color: var(--dark-text); }
+        .pub-venue { font-style: italic; color: var(--medium-text); margin-bottom: 12px; font-size: 0.9rem; }
+        .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
 
-        .pub-authors { font-size: 0.95rem; color: #444; margin-bottom: 8px; }
-        .me { font-weight: 600; text-decoration: underline; }
-
-        .pub-venue {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-        }
-
-        /* 方框按钮样式 (截图同款) */
+        /* Buttons */
         .btn-group { display: flex; gap: 10px; }
         .btn {
-            display: inline-block;
-            padding: 4px 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #333;
-            border: 1px solid #333; /* 黑边框 */
-            border-radius: 3px;
-            text-decoration: none;
-            transition: all 0.2s;
-            text-transform: uppercase;
+            display: inline-block; padding: 4px 12px; font-size: 0.75rem; font-weight: 600;
+            color: var(--dark-text); border: 1px solid var(--dark-text); border-radius: 3px;
+            text-decoration: none; transition: all 0.2s; text-transform: uppercase;
         }
-        .btn:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        /* 移动端 */
+        .btn:hover { background-color: var(--dark-text); color: var(--bg-color); }
+
         @media (max-width: 768px) {
             .pub-entry { flex-direction: column; }
             .year-header { text-align: left; }
@@ -159,87 +159,101 @@
 </head>
 <body>
 
-    <!-- 导航栏 -->
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-brand">Zhihao Li</div>
+        <div class="nav-brand">Zhihao Li | 李志豪</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="publications.html" class="active">Publications</a>
-            <a href="index.html">Profile</a>
-            <i class="fas fa-search nav-icon"></i>
-            <i class="fas fa-moon nav-icon" onclick="alert('Dark mode toggle coming soon!')"></i>
+            <i class="fas fa-search nav-icon" onclick="focusSearch()"></i>
+            <i class="fas fa-moon nav-icon" id="theme-toggle" onclick="toggleTheme()"></i>
         </div>
     </nav>
 
     <div class="main-content">
         <h1>Publications</h1>
         
-        <!-- 搜索/筛选框 -->
-        <input type="text" id="searchInput" class="search-box" placeholder="Type to filter..." onkeyup="filterPubs()">
+        <!-- Search Box -->
+        <input type="text" id="searchInput" class="search-box" placeholder="Type to filter by title, author, or venue..." onkeyup="filterPubs()">
 
-        <!-- 2025年 -->
+        <!-- 2025 -->
         <div class="year-block">
             <div class="year-header">2025</div>
 
-            <!-- Paper 1 -->
             <div class="pub-entry">
                 <div class="pub-img-box">
                     <div class="pub-badge">NeurIPS 2025</div>
-                    <img src="VTG_framework.png" class="pub-img" alt="Paper Image">
+                    <img src="imgs/VTG_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
                     <a href="#" class="pub-title">Versatile Transferable Unlearnable Example Generator</a>
                     <div class="pub-authors">
-                        <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, ... Boyu Wang
+                        <span class="me">Zhihao Li*</span>, Jiale Cai*, Gezheng Xu, Hao Zheng, Qiuyue Li, Fan Zhou, Shichun Yang, Charles Ling, Boyu Wang
                     </div>
                     <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
                     <div class="btn-group">
-                        <a href="#" class="btn">PDF</a>
-                        <a href="#" class="btn">Code</a>
-                        <a href="#" class="btn">Bib</a>
+                        <a href="https://openreview.net/forum?id=pe8Dr5jtjV" class="btn">Paper</a>
+                        <a href="https://github.com/zhli-cs/VTG" class="btn">Code</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Paper 2 -->
             <div class="pub-entry">
                 <div class="pub-img-box">
                     <div class="pub-badge">IEEE TMM</div>
-                    <img src="VSCN_framework.png" class="pub-img" alt="Paper Image">
+                    <img src="imgs/VSCN_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
                     <a href="#" class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</a>
                     <div class="pub-authors">
-                        Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, ... Xuelong Li
+                        Zhong Ji*, <span class="me">Zhihao Li*</span>, Yan Zhang, Yanwei Pang, Xuelong Li
                     </div>
                     <div class="pub-venue">IEEE Transactions on Multimedia (TMM), 2025</div>
                     <div class="btn-group">
-                        <a href="#" class="btn">PDF</a>
-                        <a href="#" class="btn">Code</a>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/11086420" class="btn">Paper</a>
+                        <a href="https://github.com/zhli-cs/VSCN" class="btn">Code</a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- 2024年 -->
+        <!-- 2024 -->
         <div class="year-block">
             <div class="year-header">2024</div>
             
-            <!-- Paper 3 -->
+            <!-- Neural Networks Paper -->
             <div class="pub-entry">
                 <div class="pub-img-box">
                     <div class="pub-badge">Neural Networks</div>
-                    <img src="HMRN_framework.png" class="pub-img" alt="Paper Image">
+                    <img src="imgs/HMRN_framework.png" class="pub-img" alt="Paper">
                 </div>
                 <div class="pub-details">
                     <a href="#" class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</a>
                     <div class="pub-authors">
-                        Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, ... Xuelong Li
+                        Zhong Ji, <span class="me">Zhihao Li</span>, Yan Zhang, Haoran Wang, Yanwei Pang, Xuelong Li
                     </div>
                     <div class="pub-venue">Neural Networks, 2024</div>
                     <div class="btn-group">
-                        <a href="#" class="btn">PDF</a>
-                        <a href="#" class="btn">Code</a>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608024001242" class="btn">Paper</a>
+                        <a href="https://github.com/zhli-cs/HMRN" class="btn">Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eagle Preprint (归类在2024，因为是2024年的Preprint) -->
+            <div class="pub-entry">
+                <div class="pub-img-box">
+                    <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
+                    <img src="imgs/EAGLE_framework.png" class="pub-img" alt="Paper">
+                </div>
+                <div class="pub-details">
+                    <a href="#" class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</a>
+                    <div class="pub-authors">
+                        <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
+                    </div>
+                    <div class="pub-venue">arXiv Preprint, 2024</div>
+                    <div class="btn-group">
+                        <a href="https://arxiv.org/abs/2408.11397" class="btn">PDF</a>
                     </div>
                 </div>
             </div>
@@ -248,7 +262,7 @@
     </div>
 
     <script>
-        // 简单的筛选脚本
+        // 搜索过滤逻辑
         function filterPubs() {
             var input = document.getElementById('searchInput');
             var filter = input.value.toUpperCase();
@@ -263,6 +277,48 @@
                 }
             }
         }
+
+        // 聚焦搜索框
+        function focusSearch() {
+            document.getElementById('searchInput').focus();
+        }
+
+        // 暗色模式逻辑
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('theme-toggle');
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // 初始化
+        window.onload = function() {
+            // 恢复主题
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                const icon = document.getElementById('theme-toggle');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+
+            // 检查是否需要自动聚焦搜索框 (从首页跳转过来时)
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('focus') === 'true') {
+                document.getElementById('searchInput').focus();
+            }
+        };
     </script>
 
 </body>
