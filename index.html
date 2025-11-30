@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhihao Li | University of Western Ontario</title>
+    <title>Zhihao Li | Western University</title>
     
     <!-- 字体: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,9 @@
     
     <style>
         :root {
-            /* ☀️ 亮色模式配色 */
+            /* ☀️ 配色保持不变 */
             --link-blue: #3b82f6; 
             --nav-badge-blue: #1565c0; 
-
             --dark-text: #1f2937;
             --medium-text: #4b5563;
             --light-text: #9ca3af;
@@ -26,16 +25,14 @@
             --card-bg: #ffffff;
             --border-color: #e5e7eb;
             --nav-text: #1f2937;
-            
             --badge-bg: #1565c0; 
         }
 
-        /* 🌙 暗色模式配色 */
+        /* 🌙 暗色模式 */
         [data-theme="dark"] {
             --link-blue: #60a5fa; 
-            --nav-badge-blue: #1d4ed8; /* 深邃蓝 */
+            --nav-badge-blue: #1d4ed8; 
             --badge-bg: #1d4ed8;
-
             --dark-text: #f3f4f6;
             --medium-text: #d1d5db;
             --light-text: #9ca3af;
@@ -48,7 +45,8 @@
         body {
             font-family: 'Inter', sans-serif;
             color: var(--dark-text);
-            line-height: 1.6;
+            line-height: 1.5; /* 紧凑行高 */
+            font-size: 0.92rem; /* 稍微减小基准字号 */
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -57,17 +55,16 @@
 
         .container {
             max-width: 960px;
-            margin: 40px auto;
-            padding: 50px 60px;
+            margin: 30px auto; /* 减小外边距 */
+            padding: 40px 50px; /* 减小内边距 */
             background-color: var(--card-bg);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            border-radius: 12px;
+            border-radius: 10px;
             transition: background-color 0.3s, box-shadow 0.3s;
         }
 
-        /* 通用链接样式 */
         a {
-            color: var(--nav-badge-blue); 
+            color: var(--nav-badge-blue);
             text-decoration: none;
             transition: all 0.2s ease;
         }
@@ -77,42 +74,40 @@
         }
         [data-theme="dark"] a:hover { color: #93c5fd; }
 
-        /* --- Header Layout --- */
+        /* --- Header (紧凑版) --- */
         header {
             display: flex;
             align-items: flex-start;
-            gap: 60px;
-            margin-bottom: 60px;
+            gap: 40px; /* 减小间距 */
+            margin-bottom: 30px; /* 大幅减小底部空白 */
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 50px;
-            padding-top: 10px;
+            padding-bottom: 30px;
+            padding-top: 0;
         }
 
-        .profile-text {
-            flex: 1;
-        }
+        .profile-text { flex: 1; }
 
         h1 {
-            font-size: 3.2rem;
-            margin: 0 0 15px 0;
+            font-size: 2.4rem; /* 3.2 -> 2.4 */
+            margin: 0 0 8px 0;
             font-weight: 800;
             color: var(--dark-text);
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             line-height: 1.1;
         }
 
         .role {
-            font-size: 1.3rem;
+            font-size: 1.1rem; /* 1.3 -> 1.1 */
             font-weight: 500;
-            color: var(--dark-text); 
-            margin-bottom: 5px;
+            color: var(--dark-text);
+            margin-bottom: 2px;
         }
 
         .university {
-            font-size: 1.3rem;
+            font-size: 1.1rem; /* 1.3 -> 1.1 */
             font-weight: 400;
             color: var(--dark-text);
-            margin-bottom: 25px;
+            margin-bottom: 15px; /* 减小间距 */
         }
         
         .university a {
@@ -120,17 +115,15 @@
             text-decoration: none;
             transition: color 0.2s;
         }
-        .university a:hover {
-            color: var(--link-blue);
-        }
+        .university a:hover { color: var(--link-blue); }
 
         .contact-info p {
-            margin: 8px 0;
-            font-size: 1rem;
+            margin: 4px 0; /* 减小行间距 */
+            font-size: 0.95rem;
             color: var(--medium-text);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         
         .contact-info a {
@@ -145,73 +138,69 @@
         
         .contact-info i {
             color: var(--light-text);
-            width: 20px;
+            width: 18px;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .social-links {
-            margin-top: 25px;
+            margin-top: 15px; /* 减小间距 */
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
         
         .social-links a {
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             color: var(--nav-badge-blue);
         }
-        .social-links a:hover {
-            opacity: 0.8;
-            text-decoration: none;
-        }
+        .social-links a:hover { opacity: 0.8; text-decoration: none; }
 
         .profile-img img {
-            width: 220px;
-            height: 220px;
+            width: 180px; /* 220 -> 180 */
+            height: 180px;
             object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
         }
 
-        /* --- Section Titles --- */
+        /* --- Sections (紧凑版) --- */
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.25rem; /* 1.5 -> 1.25 */
             font-weight: 700;
-            margin-top: 50px;
-            margin-bottom: 25px;
+            margin-top: 30px; /* 50 -> 30 */
+            margin-bottom: 15px;
             color: var(--dark-text);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         h2::before {
             content: '';
             display: block;
-            width: 6px;
-            height: 24px;
+            width: 5px;
+            height: 20px;
             background-color: var(--link-blue);
-            border-radius: 3px;
+            border-radius: 2px;
         }
 
-        /* --- Text & News --- */
-        p { margin-bottom: 1rem; color: var(--medium-text); text-align: justify; }
+        p { margin-bottom: 0.8rem; color: var(--medium-text); text-align: justify; }
 
         .news-list { list-style: none; padding: 0; }
-        .news-list li { display: flex; margin-bottom: 15px; align-items: baseline; }
+        .news-list li { display: flex; margin-bottom: 8px; align-items: baseline; } /* 15 -> 8 */
         .news-date {
-            flex-shrink: 0; width: 100px; font-weight: 600;
-            color: var(--medium-text); font-size: 0.9rem; font-family: 'Inter', monospace;
+            flex-shrink: 0; width: 90px; font-weight: 600;
+            color: var(--medium-text); font-size: 0.85rem; font-family: 'Inter', monospace;
         }
 
-        /* --- Publications Layout --- */
+        /* --- Publications (紧凑版) --- */
         .pub-item {
             display: flex;
-            gap: 25px;
-            padding: 30px 0;
+            gap: 20px;
+            padding: 20px 0; /* 30 -> 20 */
             border-bottom: 1px solid var(--border-color);
             align-items: flex-start;
         }
@@ -220,37 +209,32 @@
         .pub-figure {
             position: relative; 
             flex-shrink: 0;
-            width: 160px;
+            width: 130px; /* 160 -> 130 (更精致) */
             margin-top: 0;
         }
 
-        /* Badge 样式 */
+        /* Badge */
         .pub-badge {
             position: absolute;
-            /* ✨ 关键修改：下调 2px 以对齐右侧文字的视觉顶部 */
             top: 2px; 
             left: 0;
             width: 100%;
             transform: none;
             text-align: center;
-            
             background-color: var(--badge-bg);
-            
             color: white;
-            font-size: 0.75rem;
+            font-size: 0.65rem; /* 字号微调 */
             font-weight: 700;
-            padding: 4px 0;
-            border-radius: 6px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            padding: 3px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
             z-index: 10;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.5px;
             white-space: nowrap;
         }
 
         .pub-img-wrapper {
-            margin-top: 34px; /* 增加一点间距，适应Badge下移 */
-            border-radius: 6px;
+            margin-top: 28px; /* 配合Badge高度调整 */
+            border-radius: 5px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             background-color: var(--bg-color);
@@ -259,41 +243,29 @@
             justify-content: center;
         }
         
-        .pub-img-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        .pub-figure:hover .pub-img-wrapper img {
-            transform: scale(1.03);
-        }
+        .pub-img-wrapper img { width: 100%; height: auto; display: block; transition: transform 0.3s ease; }
+        .pub-figure:hover .pub-img-wrapper img { transform: scale(1.03); }
 
         .pub-content { flex: 1; }
 
         .pub-title {
-            font-size: 1.15rem;
+            font-size: 1.05rem; /* 1.15 -> 1.05 */
             font-weight: 700;
             color: var(--dark-text);
             display: block;
-            margin-bottom: 8px;
-            line-height: 1.4;
+            margin-bottom: 4px;
+            line-height: 1.3;
             margin-top: 0;
         }
         
-        .pub-authors { font-size: 0.95rem; color: var(--medium-text); margin-bottom: 8px; }
-        
-        .me {
-            color: var(--dark-text);
-            font-weight: 700;
-            text-decoration: none;
-        }
+        .pub-authors { font-size: 0.9rem; color: var(--medium-text); margin-bottom: 6px; }
+        .me { color: var(--dark-text); font-weight: 700; text-decoration: none; }
 
         .pub-venue {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--medium-text);
             font-style: italic;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
         
         .tag-conf { color: #dc2626; font-weight: 600; font-style: normal; } 
@@ -302,10 +274,10 @@
 
         .pub-links a {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            margin-right: 10px;
-            padding: 3px 12px;
+            margin-right: 8px;
+            padding: 2px 10px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             color: var(--medium-text);
@@ -319,27 +291,27 @@
             text-decoration: none;
         }
 
-        /* --- Internship Card Style --- */
+        /* --- Internship (紧凑版) --- */
         .intern-item {
             display: flex;
-            gap: 20px;
-            padding: 25px;
+            gap: 15px;
+            padding: 15px; /* 25 -> 15 */
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 10px;
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .intern-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
             border-color: #d1d5db;
         }
 
         .intern-logo {
             flex-shrink: 0;
-            width: 64px;
-            height: 64px;
-            border-radius: 10px;
+            width: 50px; /* 64 -> 50 */
+            height: 50px;
+            border-radius: 8px;
             overflow: hidden;
             border: 1px solid var(--border-color);
             display: flex;
@@ -347,135 +319,77 @@
             justify-content: center;
             background: #fff;
         }
-        .intern-logo img {
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
-            padding: 2px;
-        }
+        .intern-logo img { width: 90%; height: 90%; object-fit: contain; padding: 2px; }
 
-        .intern-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
+        .intern-content { flex: 1; display: flex; flex-direction: column; gap: 4px; }
 
-        .intern-row-primary {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-        }
-        
-        .intern-row-secondary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
+        .intern-row-primary { display: flex; justify-content: space-between; align-items: baseline; }
+        .intern-row-secondary { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 
-        .intern-company {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: var(--dark-text);
-        }
-
-        .intern-date {
-            font-family: 'Inter', monospace;
-            color: var(--light-text);
-            font-size: 0.9rem;
-        }
-
-        .intern-role {
-            font-size: 1.05rem;
-            font-weight: 600;
-            color: var(--nav-badge-blue); 
-        }
-
-        .intern-location {
-            font-size: 0.9rem;
-            color: var(--medium-text);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+        .intern-company { font-size: 1.05rem; font-weight: 800; color: var(--dark-text); }
+        .intern-date { font-family: 'Inter', monospace; color: var(--light-text); font-size: 0.85rem; }
+        .intern-role { font-size: 0.95rem; font-weight: 600; color: var(--nav-badge-blue); }
+        .intern-location { font-size: 0.85rem; color: var(--medium-text); display: flex; align-items: center; gap: 5px; }
         .intern-location i { color: var(--light-text); }
 
         .intern-desc {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--medium-text);
-            line-height: 1.6;
+            line-height: 1.5;
             background-color: var(--bg-color);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid var(--nav-badge-blue);
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid var(--nav-badge-blue);
         }
 
-        /* --- Service List --- */
+        /* Service */
         .service-list { list-style: none; padding: 0; margin: 0; }
-        .service-list li { margin-bottom: 10px; padding-left: 20px; position: relative; color: var(--medium-text); }
-        .service-list li::before { content: "•"; color: var(--link-blue); position: absolute; left: 0; font-weight: bold; font-size: 1.1rem; line-height: 1.5rem; }
+        .service-list li { margin-bottom: 6px; padding-left: 15px; position: relative; color: var(--medium-text); font-size: 0.92rem; }
+        .service-list li::before { content: "•"; color: var(--link-blue); position: absolute; left: 0; font-weight: bold; font-size: 1rem; line-height: 1.5rem; }
         .service-list strong { color: var(--dark-text); }
 
-        /* --- Navigation Bar --- */
+        /* Navbar */
         .navbar {
             display: flex;
-            justify-content: flex-end; /* 靠右对齐 */
+            justify-content: flex-end;
             align-items: center;
-            padding: 20px 40px;
+            padding: 15px 40px; /* 减小高度 */
             max-width: 960px;
             margin: 0 auto;
             font-family: 'Inter', sans-serif;
         }
 
-        .nav-links { display: flex; gap: 25px; align-items: center; }
-
+        .nav-links { display: flex; gap: 20px; align-items: center; }
         .nav-links a {
             color: var(--nav-text);
             font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-decoration: none;
             position: relative;
             transition: color 0.3s;
         }
-
         .nav-links a.active { color: var(--nav-badge-blue); font-weight: 600; }
         .nav-links a:hover { color: var(--nav-badge-blue); }
 
-        .nav-icon {
-            cursor: pointer;
-            font-size: 1.1rem;
-            color: var(--nav-text);
-            margin-left: 10px;
-            transition: color 0.3s;
-        }
+        .nav-icon { cursor: pointer; font-size: 1rem; color: var(--nav-text); margin-left: 8px; transition: color 0.3s; }
         .nav-icon:hover { color: var(--nav-badge-blue); }
         
+        /* Mobile */
         @media (max-width: 768px) {
-            .container { padding: 30px 20px; margin: 0; width: 100%; border-radius: 0;}
-            header { flex-direction: column-reverse; text-align: center; gap: 30px; }
-            .contact-info p { justify-content: center; }
-            .social-links { justify-content: center; }
-            h1 { font-size: 2.5rem; }
-            .role, .university { font-size: 1.1rem; }
+            .container { padding: 25px 20px; }
+            header { flex-direction: column-reverse; text-align: center; gap: 20px; }
+            h1 { font-size: 2rem; }
+            .role, .university { font-size: 1rem; }
             .pub-item { flex-direction: column; }
-            .pub-figure { width: 100%; max-width: 300px; margin-bottom: 10px; margin-top: 25px;}
-            
-            .intern-row-primary, .intern-row-secondary {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 2px;
-            }
-            .intern-date, .intern-location {
-                font-size: 0.85rem;
-                margin-bottom: 5px;
-            }
-            .intern-row-secondary { margin-bottom: 10px; }
+            .pub-figure { width: 100%; max-width: 300px; margin-bottom: 10px; margin-top: 20px;}
+            .intern-row-primary, .intern-row-secondary { flex-direction: column; align-items: flex-start; gap: 2px; }
+            .intern-date, .intern-location { font-size: 0.85rem; margin-bottom: 5px; }
+            .intern-row-secondary { margin-bottom: 8px; }
         }
 
         footer {
-            margin-top: 80px; text-align: center; font-size: 0.85rem; color: var(--light-text);
-            border-top: 1px solid var(--border-color); padding-top: 30px;
+            margin-top: 60px; text-align: center; font-size: 0.8rem; color: var(--light-text);
+            border-top: 1px solid var(--border-color); padding-top: 20px;
         }
     </style>
 </head>
@@ -496,27 +410,20 @@
     <!-- Header -->
     <header>
         <div class="profile-text">
-            <!-- 名字 -->
             <h1>Zhihao Li</h1>
-            
-            <!-- 第一行：职位 -->
             <div class="role">Ph.D. Student in Computer Science</div>
-            
-            <!-- 第二行：学校 -->
             <div class="university">
                 <a href="https://www.uwo.ca/index.html" target="_blank">University of Western Ontario</a>
             </div>
             
-            <!-- 联系方式 -->
             <div class="contact-info">
                 <p><i class="fas fa-map-marker-alt"></i> London, Ontario, Canada</p>
                 <p>
                     <i class="fas fa-envelope"></i> 
-                    <a href="mailto:zli3446@uwo.ca">zli3446@uwo.ca</a><span style="margin: 0 -5px; color: var(--light-text);">|</span><a href="mailto:zhihao.lics@gmail.com">zhihao.lics@gmail.com</a>
+                    <a href="mailto:zli3446@uwo.ca">zli3446@uwo.ca</a><span style="margin: 0 4px; color: var(--light-text);">|</span><a href="mailto:zhihao.lics@gmail.com">zhihao.lics@gmail.com</a>
                 </p>
             </div>
 
-            <!-- 社交链接 -->
             <div class="social-links">
                 <a href="https://scholar.google.com/citations?user=0qvskoEAAAAJ&hl"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                 <a href="https://github.com/zhli-cs"><i class="fab fa-github"></i> GitHub</a>
@@ -524,7 +431,7 @@
         </div>
         
         <div class="profile-img">
-            <img src="assets/avatar.png" alt="Zhihao Li">
+            <img src="imgs/avatar.png" alt="Zhihao Li">
         </div>
     </header>
 
@@ -532,14 +439,14 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            Hi! I’m Zhihao, a first-year Ph.D. student in the Machine Learning group at University of Western Ontario. 
+            Hi! I’m Zhihao, a first-year Ph.D. student at <strong>Western University</strong>. 
             I’m fortunate to be co-supervised by <a href="https://sites.google.com/site/borriewang">Prof. Boyu Wang</a> and <a href="https://www.csd.uwo.ca/~xling/">Prof. Charles Ling</a>. 
             My research focuses on <strong>Unlearnable Examples</strong>, <strong>Data Privacy</strong>, and <strong>Trustworthy AI</strong>.
         </p>
         <p>
-            Before beginning my Ph.D., I earned my Master’s degree from Tianjin University in 2024, 
-            where I focused my research on Cross-Modal Retrieval and Multi-modal Learning under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
-            Prior to this, I obtained my Bachelor’s degree from Shandong University in 2021.
+            Before beginning my Ph.D., I earned my Master’s degree from <strong>Tianjin University</strong> in 2024, 
+            where I focused my research on <strong>Cross-Modal Retrieval</strong> and <strong>Multi-modal Learning</strong> under the guidance of <a href="https://faculty.tju.edu.cn/zhongJi/en/index.htm">Prof. Zhong Ji</a>. 
+            Prior to this, I obtained my Bachelor’s degree from <strong>Shandong University</strong> in 2021.
         </p>
     </section>
 
@@ -557,14 +464,14 @@
     <!-- Publications -->
     <section id="publications">
         <h2>Selected Publications</h2>
-        <p style="font-size: 0.85rem; color: var(--light-text); margin-bottom: 25px; margin-top: -15px;">* Indicates Equal Contribution</p>
+        <p style="font-size: 0.8rem; color: var(--light-text); margin-bottom: 20px; margin-top: -15px;">* Indicates Equal Contribution</p>
 
-        <!-- Paper 1: NeurIPS -->
+        <!-- Paper 1 -->
         <div class="pub-item">
             <div class="pub-figure">
-                <div class="pub-badge">NeurIPS</div>
+                <div class="pub-badge">NeurIPS 2025</div>
                 <div class="pub-img-wrapper">
-                    <img src="assets/VTG_framework.png" alt="NeurIPS Paper">
+                    <img src="imgs/VTG_framework.png" alt="NeurIPS Paper">
                 </div>
             </div>
             <div class="pub-content">
@@ -576,17 +483,17 @@
                     Advances in Neural Information Processing Systems (NeurIPS), 2025 <span class="tag-conf">(Conference)</span>
                 </div>
                 <div class="pub-links">
-                    <a href="https://openreview.net/pdf?id=pe8Dr5jtjV">Paper</a> <a href="https://github.com/zhli-cs/VTG">Code</a>
+                    <a href="https://openreview.net/forum?id=pe8Dr5jtjV">Paper</a> <a href="https://github.com/zhli-cs/VTG">Code</a>
                 </div>
             </div>
         </div>
 
-        <!-- Paper 2: TMM -->
+        <!-- Paper 2 -->
         <div class="pub-item">
             <div class="pub-figure">
                 <div class="pub-badge">IEEE TMM</div>
                 <div class="pub-img-wrapper">
-                    <img src="assets/VSCN_framework.png" alt="TMM Paper">
+                    <img src="imgs/VSCN_framework.png" alt="TMM Paper">
                 </div>
             </div>
             <div class="pub-content">
@@ -603,12 +510,12 @@
             </div>
         </div>
 
-        <!-- Paper 3: Neural Networks -->
+        <!-- Paper 3 -->
         <div class="pub-item">
             <div class="pub-figure">
                 <div class="pub-badge">Neural Networks</div>
                 <div class="pub-img-wrapper">
-                    <img src="assets/HMRN_framework.png" alt="NN Paper">
+                    <img src="imgs/HMRN_framework.png" alt="NN Paper">
                 </div>
             </div>
             <div class="pub-content">
@@ -629,13 +536,11 @@
     <!-- Preprints -->
     <section id="preprints">
         <h2>Preprints</h2>
-        
-        <!-- Preprint 1: Eagle -->
         <div class="pub-item">
             <div class="pub-figure">
                 <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
                 <div class="pub-img-wrapper">
-                    <img src="assets/EAGLE_framework.png" alt="Eagle Paper">
+                    <img src="imgs/EAGLE_framework.png" alt="Eagle Paper">
                 </div>
             </div>
             <div class="pub-content">
@@ -644,7 +549,7 @@
                     <span class="me">Zhihao Li</span>, Yao Du, Yang Liu, Yan Zhang, Yufang Liu, Mengdi Zhang, Xunliang Cai
                 </div>
                 <div class="pub-venue">
-                    arXiv Preprint, 2024</span>
+                    arXiv Preprint <span class="tag-preprint">(Preprint), 2024</span>
                 </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2408.11397">Paper</a>
@@ -656,31 +561,25 @@
     <!-- Internship -->
     <section id="internship">
         <h2>Internship Experience</h2>
-        
         <div class="intern-item">
             <div class="intern-logo">
-                <img src="assets/meituan.png" alt="Meituan Logo">
+                <img src="imgs/meituan.png" alt="Meituan Logo">
             </div>
-            
             <div class="intern-content">
-                <!-- 第一行：公司 + 日期 -->
                 <div class="intern-row-primary">
                     <span class="intern-company">Meituan</span>
                     <span class="intern-date">Apr. 2024 - Aug. 2024</span>
                 </div>
-                
-                <!-- 第二行：职位 + 地点 (地点靠右) -->
                 <div class="intern-row-secondary">
-                    <span class="intern-role">Research Intern – Large Language Models</span>
+                    <span class="intern-role">Large Language Model Algorithm Engineer Intern</span>
                     <span class="intern-location">
                         <i class="fas fa-map-marker-alt"></i> Beijing, China
                     </span>
                 </div>
-
                 <div class="intern-desc">
-                    <strong>Topic:</strong> Geometric reasoning in Multi-modal Large Language Models.
+                    <strong>Topic:</strong> Geometric Reasoning with Multi-modal Large Language Models.
                     <br>
-                    <strong>Objective:</strong> Improving MLLMs’ geometric reasoning abilities through visual-perceptual understanding.
+                    <strong>Objective:</strong> Enhance the geometric problem-solving capabilities of MLLMs from a novel perspective of visual perception.
                 </div>
             </div>
         </div>
@@ -702,7 +601,6 @@
 
 </div>
 
-<!-- 脚本 -->
 <script>
     function goToSearch() {
         window.location.href = "publications.html?focus=true";
