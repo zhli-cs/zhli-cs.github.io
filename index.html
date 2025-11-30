@@ -17,10 +17,10 @@
         :root {
             /* ☀️ 亮色模式配色 */
             
-            /* 1. 装饰/交互亮蓝 (保留用于按钮悬停、装饰条) */
+            /* 1. 装饰/交互亮蓝 */
             --link-blue: #3b82f6; 
             
-            /* 2. 核心深蓝 (用于导航、Badge、重要文字链接) -> #1565c0 */
+            /* 2. 核心深蓝 */
             --nav-badge-blue: #1565c0; 
 
             --dark-text: #1f2937;
@@ -37,7 +37,7 @@
         /* 🌙 暗色模式配色 */
         [data-theme="dark"] {
             --link-blue: #60a5fa; 
-            --nav-badge-blue: #1d4ed8; /* 深邃蓝 */
+            --nav-badge-blue: #1d4ed8; 
             --badge-bg: #1d4ed8;
 
             --dark-text: #f3f4f6;
@@ -213,20 +213,22 @@
         .news-list { list-style: none; padding: 0; }
         .news-list li { display: flex; margin-bottom: 8px; align-items: baseline; } /* 15 -> 8 */
         
-        /* ✨ News Date 最终优化版 */
+        /* ✨ News Date 最终优化版：黑色字体 */
         .news-date {
             flex-shrink: 0; 
-            width: 90px; /* 保持固定宽度，对齐 */
+            width: 90px; 
             font-weight: 600;
-            color: var(--nav-badge-blue); 
-            font-size: 0.9rem; /* 稍微调大一点点，清晰 */
+            
+            /* ✨ 修改处：改为深色 (黑色) */
+            color: var(--dark-text); 
+            
+            font-size: 0.85rem; 
             
             /* 使用 Inter 字体，配合等宽数字属性，既美观又对齐 */
             font-family: 'Inter', sans-serif;
-            font-variant-numeric: tabular-nums; 
+            font-variant-numeric: tabular-nums;
             
             margin-right: 15px;
-            /* 去掉边框背景 */
             background: none;
             border: none;
             padding: 0;
@@ -403,7 +405,6 @@
             color: var(--dark-text);
         }
 
-        /* 实习日期字体优化 */
         .intern-date {
             font-family: 'Inter', sans-serif;
             font-variant-numeric: tabular-nums;
@@ -573,7 +574,7 @@
         <h2>News</h2>
         <ul class="news-list">
             <li>
-                <!-- ✨ 优化后的日期：无框、深蓝色、Inter字体、数字对齐 -->
+                <!-- ✨ News Date 优化版：黑色文字，Inter字体 -->
                 <span class="news-date">Sep. 2025</span> 
                 <span>Our paper "Versatile Transferable Unlearnable Example Generator" was accepted by <strong>NeurIPS 2025</strong>! 🎉</span>
             </li>
