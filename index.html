@@ -345,20 +345,16 @@
 
         /* --- Internship Card Style (紧凑版) --- */
         .intern-item {
-            display: flex;
-            gap: 15px;
-            padding: 15px; /* 25 -> 15 */
-            background-color: var(--card-bg);
-            border: none;
-            border-radius: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .intern-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-            border-color: #d1d5db;
-        }
-
+        display: flex;
+        gap: 15px;
+        padding: 15px; 
+        background-color: var(--card-bg);
+    
+        /* 👇 修改：恢复静态边框，否则卡片没有轮廓 */
+        border: none; 
+    
+        border-radius: 10px;
+}
         .intern-logo {
             flex-shrink: 0;
             width: 50px; /* 64 -> 50 */
