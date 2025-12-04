@@ -236,22 +236,34 @@
             text-align: left;
         }
 
-        /* --- Publications Layout (紧凑版) --- */
-        .pub-item {
-            display: flex;
-            gap: 20px;
-            padding: 20px 0; /* 30 -> 20 */
-            border-bottom: 1px solid var(--border-color);
-            align-items: flex-start;
-        }
-        .pub-item:last-child { border-bottom: none; }
+    .pub-item {
+    display: flex;
+    gap: 20px;
+    
+    padding: 20px; 
+    
+    border: 1px solid transparent; 
+    border-bottom: 1px solid var(--border-color); 
+    
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
+    
+    align-items: flex-start;
+    background-color: transparent; 
+    }
 
-        .pub-figure {
-            position: relative; 
-            flex-shrink: 0;
-            width: 130px; /* 160 -> 130 */
-            margin-top: 0;
-        }
+    .pub-item:hover {
+    transform: translateY(-2px); /* 向上浮动 */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06); /* 投影 */
+    background-color: var(--card-bg); /* 悬浮时显示卡片背景色 */
+    border-color: #d1d5db; /* 悬浮时显示浅灰色边框 */
+    border-bottom: 1px solid #d1d5db; /* 确保底边框颜色一致 */
+    z-index: 1; /* 确保浮起时在最上层 */
+    }
+        
+    .pub-item:last-child {
+    border-bottom: 1px solid transparent;
+    }
 
         /* Badge */
         .pub-badge {
