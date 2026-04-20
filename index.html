@@ -201,6 +201,7 @@
             border-radius: 2px;
         }
 
+
         /* --- Text & News --- */
         p { margin-bottom: 0.8rem; color: var(--medium-text); text-align: justify; }
 
@@ -423,6 +424,15 @@
             padding: 10px;
             border-radius: 6px;
             border-left: 3px solid var(--nav-badge-blue);
+        }
+        .intern-role-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 5px;
+            border: 0.5px solid #e0e0e0;
+            vertical-align: middle;
+            margin-left: 4px;
+            object-fit: contain;
         }
 
         /* --- Service List --- */
@@ -709,38 +719,40 @@
         </div>
     </section>
 
-    <!-- Internship -->
-    <section id="internship">
-        <h2>Internship Experience</h2>
+   <!-- Internship -->
+<section id="internship">
+    <h2>Internship Experience</h2>
+    
+    <div class="intern-item">
+        <div class="intern-logo">
+            <img src="assets/meituan.png" alt="Meituan Logo">
+        </div>
         
-        <div class="intern-item">
-            <div class="intern-logo">
-                <img src="assets/meituan.png" alt="Meituan Logo">
+        <div class="intern-content">
+            <!-- 第一行：公司 + 日期 -->
+            <div class="intern-row-primary">
+                <span class="intern-company">Meituan</span>
+                <span class="intern-date">Apr. 2024 - Aug. 2024</span>
             </div>
             
-            <div class="intern-content">
-                <!-- 第一行：公司 + 日期 -->
-                <div class="intern-row-primary">
-                    <span class="intern-company">Meituan</span>
-                    <span class="intern-date">Apr. 2024 - Aug. 2024</span>
-                </div>
-                
-                <!-- 第二行：职位 + 地点 (地点靠右) -->
-                <div class="intern-row-secondary">
-                    <span class="intern-role">LLM Research Intern – Meituan LongCat Team</span>
-                    <span class="intern-location">
-                        <i class="fas fa-map-marker-alt"></i> Beijing, China
-                    </span>
-                </div>
-
-                <div class="intern-desc">
-                    <strong>Topic:</strong> Geometric Reasoning with Multi-modal Large Language Models.
-                    <br>
-                    <strong>Objective:</strong> Improving MLLMs’ geometric reasoning abilities through enhanced visual-perceptual understanding.
-                </div>
+            <!-- 第二行：职位 + 地点 (LongCat logo 内联) -->
+            <div class="intern-row-secondary">
+                <span class="intern-role">
+                    LLM Research Intern – LongCat Team
+                    <img src="assets/longcat.png" alt="LongCat Logo" class="intern-role-icon">
+                </span>
+                <span class="intern-location">
+                    <i class="fas fa-map-marker-alt"></i> Beijing, China
+                </span>
+            </div>
+            <div class="intern-desc">
+                <strong>Topic:</strong> Geometric Reasoning with Multi-modal Large Language Models.
+                <br>
+                <strong>Objective:</strong> Improving MLLMs' geometric reasoning abilities through enhanced visual-perceptual understanding.
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Service -->
     <section id="service">
