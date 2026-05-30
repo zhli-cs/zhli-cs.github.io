@@ -495,6 +495,22 @@
             .intern-row-secondary { margin-bottom: 10px; }
         }
 
+        /* --- Visitor Map --- */
+        .visitor-map-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 16px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+        .visitor-map-wrapper img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+
         footer {
             margin-top: 60px; text-align: center; font-size: 0.8rem; color: var(--light-text);
             border-top: 1px solid var(--border-color); padding-top: 20px;
@@ -560,7 +576,7 @@
         <h2>About Me</h2>
         <p>
             Hi! I’m Zhihao, a Ph.D. student in the Machine Learning group at Western University. 
-            I’m fortunate to be co-supervised by <a href="https://sites.google.com/site/borriewang">Prof. Boyu Wang</a> and <a href="https://www.csd.uwo.ca/~xling/">Prof. Charles Ling</a>. 
+            I’m fortunate to be co-supervised by <a href="https://sites.google.com/site/borriewang">Prof. Boyu Wang</a> and <a href="https://www.csd.uwo.ca/~xling/">Prof. Charles Ling</a> (Fellow, Canadian Academy of Engineering). 
             My research focuses on <strong>Unlearnable Examples</strong>, <strong>Data Privacy</strong>, and <strong>Trustworthy AI</strong>.
         </p>
         <p>
@@ -764,6 +780,20 @@
             <li><strong>Journal Reviewer:</strong> TPAMI, TCSVT, KBS, SCIS, Neural Networks</li>
             <li><strong>Teaching Assistant:</strong> CS2209 (Applied Logic), DS3000 (Machine Learning)</li>
         </ul>
+    </section>
+
+    <!-- Visitors -->
+    <section id="visitors">
+        <h2>Visitors</h2>
+        <p style="font-size: 0.85rem; margin-top: -8px; margin-bottom: 16px;">
+            A live map of where recent visitors come from.
+        </p>
+        <div class="visitor-map-wrapper">
+            <a href="https://mapmyvisitors.com/web/1c4w5" title="Visit tracker">
+                <img src="https://mapmyvisitors.com/map.png?d=uQJN5flI_cOqhH19y7QsokJR3c8rLc1zA7UT34AArdI&cl=ffffff"
+                     alt="Map of where recent visitors come from" loading="lazy">
+            </a>
+        </div>
     </section>
 
     <footer>
