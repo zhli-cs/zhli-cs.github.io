@@ -507,6 +507,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
         .visitor-globe {
+            position: relative;
             width: 340px;
             height: 340px;
             max-width: 100%;
@@ -517,6 +518,12 @@
             height: auto;
             display: block;
             margin: 0 auto;
+        }
+        .visitor-globe-link {
+            position: absolute;
+            inset: 0;
+            z-index: 5;
+            cursor: pointer;
         }
         @media (max-width: 768px) {
             .visitor-map-wrapper { padding: 16px; }
@@ -803,6 +810,8 @@
         <div class="visitor-map-wrapper">
             <div class="visitor-globe">
                 <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=dAFcXsRwd53UtSiJHEnV7JD3qbAn2Cq2GMZPMG_y4v8"></script>
+                <a class="visitor-globe-link" href="https://mapmyvisitors.com/web/1c4w5"
+                   target="_blank" rel="noopener" title="View visitor stats" aria-label="View visitor stats"></a>
             </div>
         </div>
     </section>
