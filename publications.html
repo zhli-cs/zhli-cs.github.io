@@ -103,47 +103,13 @@
         [data-theme="dark"] .year-header { color: #4b5563; }
 
         /* Pub Entry */
-        .pub-entry { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; } /* 紧凑间距 */
+        .pub-entry { margin-bottom: 26px; } /* 紧凑间距 */
         
-        .pub-img-box { 
-            position: relative; 
-            width: 130px; /* 160 -> 130 */
-            flex-shrink: 0; 
-            margin-top: 0; 
-        }
         /* Pub Tag */
         .tag-conf { color: #dc2626; font-weight: 600; font-style: normal; } 
         .tag-jour { color: #7e22ce; font-weight: 600; font-style: normal; }
         .tag-preprint { color: var(--medium-text); font-weight: 600; font-style: normal; }
-        /* Badge 样式 */
-        .pub-badge { 
-            position: absolute; 
-            top: 2px; 
-            left: 0; 
-            width: 100%; 
-            transform: none; 
-            text-align: center;
-            background-color: var(--badge-bg); 
-            color: white; 
-            font-size: 0.65rem; /* 微调 */
-            font-weight: 700; 
-            padding: 3px 0; 
-            border-radius: 4px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
-            z-index: 2; 
-            white-space: nowrap;
-        }
 
-        .pub-img { 
-            width: 100%; 
-            margin-top: 28px; /* 34 -> 28 */
-            border: 1px solid var(--border-color); 
-            border-radius: 4px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
-            transition: transform 0.2s; 
-            background-color: var(--card-bg);
-        }
-        .pub-entry:hover .pub-img { transform: scale(1.02); }
         
         .pub-details { flex: 1; }
         
@@ -183,7 +149,6 @@
         }
 
         @media (max-width: 768px) {
-            .pub-entry { flex-direction: column; }
             .year-header { text-align: left; }
         }
         .pub-note {
@@ -224,10 +189,6 @@
             <div class="year-header">2026</div>
             <!-- NeurIPS 2026 -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">NeurIPS</div>
-                    <!-- <img src="assets/FUSE_poster.png" class="pub-img" alt="Paper"> -->
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">Beyond Feature Disruption: Boundary-Diverting Unlearnable Examples against Linear Probing</span>
                     <div class="pub-authors">
@@ -241,10 +202,6 @@
                 </div>
             </div>
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">NeurIPS</div>
-                    <!-- <img src="assets/FUSE_poster.png" class="pub-img" alt="Paper"> -->
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">Unsupervised Unlearnable Segmentation via Semantic Structure Disruption</span>
                     <div class="pub-authors">
@@ -258,10 +215,6 @@
                 </div>
             </div>
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">NeurIPS</div>
-                    <!-- <img src="assets/FUSE_poster.png" class="pub-img" alt="Paper"> -->
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">From Small to Large: Cross-Scale Graph Domain Adaptation via Local-Global Structural Alignment</span>
                     <div class="pub-authors">
@@ -275,10 +228,6 @@
                 </div>
             </div>
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">NeurIPS</div>
-                    <!-- <img src="assets/FUSE_poster.png" class="pub-img" alt="Paper"> -->
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">PrivateSeal: Low-Sensitivity Latent Directions for Diffusion-Resilient User-Specific Watermarking</span>
                     <div class="pub-authors">
@@ -294,10 +243,6 @@
             
             <!-- ICML 2026 -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">ICML</div>
-                    <img src="assets/FUSE_poster.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">FUSE: Full‑spectrum Unlearnable Examples via Spectral Equalization</span>
                     <div class="pub-authors">
@@ -312,10 +257,6 @@
             </div>
             <!-- ICLR 2026 -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">ICLR</div>
-                    <img src="assets/BAIT_poster.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">When Priors Backfire: On the Vulnerability of Unlearnable Examples to Pretraining</span>
                     <div class="pub-authors">
@@ -330,10 +271,6 @@
             </div>
 
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">ICLR</div>
-                    <!-- <img src="assets/framework.png" class="pub-img" alt="Paper"> -->
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">SAGA: Structural Aggregation Guided Alignment with Dynamic View and Neighborhood Order Selection for Multiview Graph Domain Adaptation</span>
                     <div class="pub-authors">
@@ -353,10 +290,6 @@
             
             <!-- NeurIPS 2025 -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">NeurIPS</div>
-                    <img src="assets/VTG_framework.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">Versatile Transferable Unlearnable Example Generator</span>
                     <div class="pub-authors">
@@ -372,10 +305,6 @@
 
             <!-- TMM -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">IEEE TMM</div>
-                    <img src="assets/VSCN_framework.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">Visual Semantic Contextualization Network for Multi-Query Image Retrieval</span>
                     <div class="pub-authors">
@@ -396,10 +325,6 @@
             
             <!-- Neural Network -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge">Neural Networks</div>
-                    <img src="assets/HMRN_framework.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">Hierarchical Matching and Reasoning for Multi-Query Image Retrieval</span>
                     <div class="pub-authors">
@@ -415,10 +340,6 @@
 
             <!-- Eagle Preprint -->
             <div class="pub-entry">
-                <div class="pub-img-box">
-                    <div class="pub-badge" style="background-color: #6b7280;">Preprint</div>
-                    <img src="assets/EAGLE_framework.png" class="pub-img" alt="Paper">
-                </div>
                 <div class="pub-details">
                     <span class="pub-title">EAGLE: Elevating Geometric Reasoning through LLM-empowered Visual Instruction Tuning</span>
                     <div class="pub-authors">
